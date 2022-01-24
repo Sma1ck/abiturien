@@ -1,0 +1,269 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Специалитет
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class = "row">
+        <!--    Название страницы и блок срочной информации     -->
+        <div class = 'col-4-md align-self-start'>
+            <br>
+            <h1 class="display-4"><u> Специалитет </u></h1>
+        </div>
+        <div class="col-md align-self-center"></div>
+        <div class="col-8-md align-self-end">
+            <br>
+            <!--        <blockquote class="blockquoteMyOrange">-->
+            <!--            <p> Важная информация</p>-->
+            <!--        </blockquote>-->
+
+        </div>
+    </div>
+
+
+
+
+    <br>
+    <!--   Блок кнопки\фото     -->
+    <div class="row" >
+        <div class="col-md-8">
+            <!--        блок с кнопками     -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dropdown mb-2">
+                        <a class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Правила приема</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% static 'docPriem2021/11pravilaBM.pdf' %}">Правила приема</a>
+                            <!--                            <a class="dropdown-item text-danger" href="{% static 'docPriem2020/osob20_21.pdf' %}">Особенности приема на 2020 год</a>-->
+                        </div>
+                    </div>
+                    <a href="{% static 'docPriem2021/spec/2usloviyaSpec.pdf' %}" class="btn btn-primary btn-block">Условия поступления</a>
+                    <a href="{% static 'docPriem2021/5bakIndivDos.pdf' %}" class="btn btn-primary btn-block">Порядок учета индивидуальных достижений</a>
+
+                    <a href="{% url 'spec_calendar_url' %}" class="btn btn-primary btn-block">Календарь приема</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="{% url 'submit_url' %}" class="btn btn-primary btn-block">Списки подавших документы</a>
+                    <a href="{% url 'vstupit_calendar_page_spec_url' %}" class="btn btn-primary btn-block">Расписание вступительных испытаний </a>
+                    <a href="{% url 'recommended_url' %}" class="btn btn-primary btn-block">Списки рекомендованных к зачислению</a>
+                    <a href="{% url 'order_spec_url' %}" class="btn btn-primary btn-block">Приказы о зачислении</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <!--        Фото  -->
+            <figure class="figure">
+                <img src="{% static 'image/mag.jpg'%}" class="figure-img img-fluid rounded" style="height : 230px">
+            </figure>
+        </div>
+    </div>
+    <br>
+    <hr style="border-width: 3px;">
+    <!--    -->
+    <!--            Общая информация + План приема + Список документов -->
+    <!--    -->
+    <h3 align="center"> Общая информация </h3><br>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <!--        План приема         -->
+                <table class="table table-sm table-bordered" style="font-size: .9em; text-align: center; font-size: .9em" >
+                    <tbody>
+                    <tr>
+                        <td colspan="6"> <h4>План приема</h4> </td>
+                    </tr>
+                    <tr>
+                        <td>План приема по направлению подготовки для обучения по образовательным программам
+                            высшего образования - программ магистратуры на места по договорам об оказании платных услуг</td>
+                        <td>Наименование направления подготовки</td>
+                        <td>Код направления подготовки</td>
+                        <td>Всего</td>
+                        <td>Из них по очной форме обучения</td>
+                        <td>Из них по заочной форме обучения</td>
+                    </tr>
+                    <tr>
+                        <td>на места по договорам об оказании платных образовательных услуг</td>
+                        <td>Судебная и прокурорская деятельность, <b>специализация – Судебная деятельность</b> </td>
+                        <td>40.05.04</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>-</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>на места по договорам об оказании платных образовательных услуг для лиц, имеющих
+                            право на прием в пределах квоты, лиц, имеющих особые права</td>
+                        <td>Судебная и прокурорская деятельность, <b>специализация – Судебная деятельность</b> </td>
+                        <td>40.05.04</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><a href="{% static 'docPriem2021/spec/1planPriemSpec.pdf' %}" class="btn btn-primary btn-block">Посмотреть документ </a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--    Необходимые документы    -->
+        <div class="col-md-4" style=" background-color: #e3f2fd;">
+            {% include 'abitur/includes/documents.html' %}
+            <a target="_blank" href="{% static 'docPriem2021/dogovorBM.pdf' %}" class="btn btn-primary "><p class="small">
+                Типовой договор об образовании на обучение по образовательным программам высшего образования</p></a>
+            <a target="_blank" href="{% static 'docPriem2021/PRdogovorBM.pdf' %}" class="btn btn-primary btn-block mt-1"><p class="small">
+                Приложение к договору </p></a>
+            <a target="_blank" href="{% static 'docPriem2021/price/price_spec_OFO.pdf' %}" class="btn btn-primary mt-1"><p class="small">
+                ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – ПРОГРАММАМ СПЕЦИАЛИТЕТА</p></a>
+
+
+        </div>
+    </div>
+    <br><br>
+
+    <hr style="border-width: 3px;">
+
+
+    <!--
+
+                        Очная форма
+
+    -->
+    <h2 class="text-center m-4"> Очная форма обучения </h2>
+    <div class="row">
+
+
+
+
+        <!--    Направления подготовки и документы  -->
+        <div class="row">
+            <!--    Направления подготовки      -->
+            <div class="col-md">
+                <div class="row">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm table-response table-bordered" style=" background-color: #e3f2fd; text-align: center; " >
+                            <tr class="table-info">
+                                <td colspan="3"><h4>Направления подготовки</h4> </td>
+                            </tr>
+                            <tr>
+                                <td>Название направления</td>
+                                <td>Срок обучения</td>
+                                <td> Специализация</td>
+                            </tr>
+                            <tr>
+                                <td>Судебная и прокурорская деятельность</td>
+                                <td>5 лет</td>
+                                <td>Судебная деятельность</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-width: 3px;">
+                <div class="row">
+
+
+                    <!--   Вступительные испытания таблица    -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered" style="font-size: .9em">
+                            <tr class="table-info" style="text-align: center;">
+                                <td colspan="3"><h4>Вступительные испытания</h4> </td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>Уровень образования</td>
+                                <td>Перечень вступительных испытаний</td>
+                                <td>Минимальное количество баллов</td>
+                            </tr>
+                            <tr>
+                                <td>Среднее общее образование</td>
+                                <td>Результаты ЕГЭ по предметам обществознание, русский язык, история / иностранный язык</td>
+                                <td>
+                                    Русский язык - 36 баллов <br>
+                                    Обществознание - 42 балла <br>
+                                    История - 32 балла <br>
+                                    Иностранный язык - 22 балла
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Начальное профессиональное или среднее профессиональное (не профильное) образование</td>
+                                <td>Необходимо пройти собеседование (тестирование) по общеобразовательным предметам</td>
+                                <td>
+                                    Русский язык - 40 баллов <br> Обществознание - 45 баллов <br> История – 35 баллов
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Среднее профессиональное (юридическое) образование</td>
+                                <td>Необходимо пройти собеседование (тестирование) по общеобразовательным предметам</td>
+                                <td>
+                                    Русский язык - 40 баллов <br> Обществознание - 45 баллов <br> Теория государства и права - 40 баллов
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Высшее образование</td>
+                                <td>Необходимо пройти собеседование (тестирование) по общеобразовательным предметам</td>
+                                <td>
+                                    Русский язык - 40 баллов <br> Обществознание - 45 баллов <br> Основы конституционного права РФ - 40 баллов
+                                </td>
+                            </tr>
+
+                        </table>
+                        <br><br>
+                    </div>
+                    <!--        текст под таблицей      -->
+                    <div class="row">
+
+                        <div class="col-md-7">
+                            <blockquote class="blockquoteMyOrange">
+                                <p class="small">Вступительные испытания в Академии проводятся на русском языке очно и/или с применением дистанционных технологий.</p>
+                            </blockquote>
+                            <blockquote class="blockquoteMyOrange">
+                                <p class="small">
+                                    Приоритетным вступительным испытанием при ранжировании списков
+                                    поступающих только по результатам общеобразовательных вступительных испытаний
+                                    является обществознание; обязательным вступительным испытанием является
+                                    русский язык.</p>
+                            </blockquote>
+                            <blockquote class="blockquoteMyRed">
+                                <p><a href="http://www.ege.edu.ru/ru/main/schedule/" target="_blank">
+                                    Информация о сроках проведения ЕГЭ для сдачи ЕГЭ лицами, не имеющими
+                                    результатов ЕГЭ (при преме на обучение по программам бакалавриата или
+                                    программам специалитета)</a></p>
+                            </blockquote>
+                        </div>
+                        <!--            Документы       -->
+                        <div class="col-md-5">
+                            <table class="table table-striped table-sm" style=" background-color: #e3f2fd; text-align: center; font-size: .9em">
+                                <tr>
+                                    <td> <h5>Программы вступительных испытаний</h5></td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td><a href="{% static 'docPriem2021/spec/3MinbalSpec.pdf'%}">Перечень вступительных испытаний и минимальное количество баллов</a> </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="{% static 'docPriem2021/vstupit/istorija_compressed.pdf'%}">Программа "История"</a> </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="{% static 'docPriem2021/vstupit/obschestvoznanie_compressed.pdf'%}">Программа "Обществознание"</a> </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="{% static 'docPriem2021/vstupit/osnovy-konstitucionnogo-prava.pdf'%}">Программа "Основы конституционного права РФ"</a> </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="{% static 'docPriem2021/vstupit/teorija-gosudarstva-i-prava_compressed.pdf'%}">Программа "Теория государства и права"</a> </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

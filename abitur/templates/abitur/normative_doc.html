@@ -1,0 +1,78 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Нормативные документы
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center m-4"> Нормативные документы </h2>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 text-center mb-5">
+        <br>
+
+        <a class="dropdown-item" target="_blank" href="https://jurac.ru/uploads/DOCUMENTS/sved-documents/2-doc-new.pdf"><p class="small">
+            Лицензия на осуществление образовательной деятельности (с приложениями)
+        </p></a>
+        <a class="dropdown-item" target="_blank" href="https://jurac.ru/uploads/DOCUMENTS/sved-documents/2-doc-pr.pdf"><p class="small">
+            Приложение к лицензии на осуществление образовательной деятельности
+        </p></a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" target="_blank" href="https://jurac.ru/uploads/DOCUMENTS/sved-documents/3new_doc1.pdf"><p class="small">
+            Свидетельство о государственной аккредитации (с приложениями)
+        </p></a>
+        <div class="dropdown-divider"></div>
+        <!--        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2020/osob20_21.pdf' %}"><p class="small text-danger">-->
+        <!--            ОСОБЕННОСТИ ПРИЕМА НА ОБУЧЕНИЕ В АВТОНОМНУЮ НЕКОММЕРЧЕСКУЮ ОРГАНИЗАЦИЮ ВЫСШЕГО ОБРАЗОВАНИЯ <br>-->
+        <!--            "САНКТ-ПЕТЕРБУРГСКАЯ ЮРИДИЧЕСКАЯ АКАДЕМИЯ" НА 2020/2021 УЧЕБНЫЙ ГОД.</p></a>-->
+        <!--        <div class="dropdown-divider"></div>-->
+
+        {% comment %}
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2020/prikazPravBM.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ ПРАВИЛ ПРИЕМА ПО ОБРАЗОВАТЕЛЬНЫМ
+            ПРОГРАММАМ ВЫСШЕГО ОБРАЗОВАНИЯ – <br>ПРОГРАММАМ БАКАЛАВРИАТА, ПРОГРАММАМ МАГИСТРАТУРЫ, ПРОГРАММ СПЕЦИАЛИТЕТА</p></a>
+
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2020/prikazPravAsp.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ ПРАВИЛ
+            ПРИЕМА ПО ОБРАЗОВАТЕЛЬНЫМ ПРОГРАММАМ ВЫСШЕГО ОБРАЗОВАНИЯ – <br>ПРОГРАММАМ ПОДГОТОВКИ
+            НАУЧНО-ПЕДАГОГИЧЕСКИХ КАДРОВ В АСПИРАНТУРЕ</p></a>
+
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2020/prikazVstupit.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ  УТВЕРЖДЕНИИ ПЕРЕЧНЯ ВСТУПИТЕЛЬНЫХ ИСПЫТАНИЙ, ПРОВОДИМЫХ АКАДЕМИЕЙ САМОСТОЯТЕЛЬНО</p></a>
+        <div class="dropdown-divider"></div>
+        {% endcomment %}
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/asp/11pravilaAsp.pdf' %}"><p class="small">
+            ПРАВИЛА ПРИЕМА НА ОБУЧЕНИЕ ПО ОБРАЗОВАТЕЛЬНЫМ ПРОГРАММАМ ВЫСШЕГО ОБРАЗОВАНИЯ
+            – <br>ПРОГРАММАМ ПОДГОТОВКИ НАУЧНО-ПЕДАГОГИЧЕСКИХ КАДРОВ В АСПИРАНТУРЕ</p></a>
+
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/11pravilaBM.pdf' %}"> <p class="small">
+            ПРАВИЛА ПРИЕМА НА ОБУЧЕНИЕ ППО ОБРАЗОВАТЕЛЬНЫМ ПРОГРАММАМ ВЫСШЕГО ОБРАЗОВАНИЯ -
+            <br> ПРОГРАММАМ БАКАЛАВРИАТА, ПРОГРАММАМ МАГИСТРАТУРЫ, ПРОГРАММАМ СПЕЦИАЛИТЕТА</p></a>
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/dogovorBM.pdf' %}"><p class="small">
+            Типовой договор об образовании на обучение по образовательным программам высшего образования</p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/PRdogovorBM.pdf' %}"><p class="small">
+            Приложение к договору</p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_bac_OFO.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ БАКАЛАВРИАТА (ОФО) </p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_bac_OZFO.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ БАКАЛАВРИАТА (ОЗФО) </p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_bac_ZFO.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ БАКАЛАВРИАТА (ЗФО) </p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_spec_OFO.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ СПЕЦИАЛИТЕТА (ОФО) </p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_magOFO.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ МАГИСТРАТУРЫ (ОФО)</p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_magZFO.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ МАГИСТРАТУРЫ (ЗФО)</p></a>
+        <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/price/price_asp.pdf' %}"><p class="small">
+            ПРИКАЗ ОБ УТВЕРЖДЕНИИ СТОИМОСТИ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ – <br>ПРОГРАММАМ АСПИРАНТУРЫ</p></a>
+
+    </div>
+    <div class="col-lg-3"></div>
+
+</div>
+
+{% endblock %}

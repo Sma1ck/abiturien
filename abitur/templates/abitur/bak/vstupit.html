@@ -1,0 +1,38 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Расписание вступительных испытаний
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container text-center">
+    <h2 class="text-center m-4">Расписание вступительных испытаний</h2>
+
+    <blockquote class="blockquoteMyBlue">
+        <h5 class="text-danger text-center">ВНИМАНИЕ:</h5>
+        <p class="text-center"><b>Вступительные испытания проводятся только по предварительной
+            записи.* </b></p>
+        <p class="text-center">Запись на прохождение вступительных испытаний проводиться по телефонам приемной комиссии: <br><br>
+            <b>+7 (812) 677-00-07 <br>+7 (921) 951-34-33 <br>+7 (921) 564-31-01</b><br>
+            Проведение вступительных испытаний и рассмотрения апелляций будет
+            осуществляться с использованием дистанционных технологий. <br><br>
+            <b>*Вступительные испытания можно пройти в индивидуальном
+                порядке по предварительной записи</b>
+
+        </p>
+
+    </blockquote>
+    <a href="{% static 'docPriem2021/srokVstup/bak/b_main.pdf' %}" class="btn btn-info btn-block mb-3">
+        Бакалавриат, специалитет ОФО основной набор</a>
+    <a href="{% static 'docPriem2021/srokVstup/bak/b_zfo.pdf' %}" class="btn btn-info btn-block mb-3">
+        Бакалавриат,специалитет ОФО доп.набор,<br> ОЗФО ЗФО основной набор</a>
+    <a href="{% static 'docPriem2021/srokVstup/bak/b_zfo_2.pdf' %}" class="btn btn-info btn-block mb-3">
+        Бакалавриат ОЗФО ЗФО доп.набор</a>
+    <a href="{% static 'docPriem2020/srokVstup/bak/pvi.pdf' %}" class="btn btn-info btn-block mb-3">Проведение вступительных испытаний</a>
+
+</div>
+<br>
+
+{% endblock %}

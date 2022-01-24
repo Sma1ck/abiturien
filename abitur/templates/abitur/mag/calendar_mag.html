@@ -1,0 +1,162 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Магистратура - Календарь приема
+{% endblock %}
+
+{% block content %}
+<style>
+     .bl {
+  height: 100%;
+  width: 280px;
+  background-image: url({% static 'image/grad-menu.jpg'%})
+  }
+</style>
+
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-9">
+            <h1 align="center">Календарь приема (магистратура)</h1>
+            <hr style="border-width: 3px;">
+        </div>
+        <div class="col-md-3">
+            <div align="center">
+                <button type="button" onclick="history.back();" class="btn btn-lg btn-block btn-outline-primary">Вернуться назад </button>
+            </div>
+        </div>
+    </div>
+
+    <blockquote class="blockquoteMyBlue">
+        <a href="{% static 'docPriem2021/4srokiMag1.pdf' %}" target="_blank"><h5>Информация о сроках начала и завершения приема документов, необходимых для поступления, сроках
+            проведения вступительных испытаний для лиц, поступающих на обучение по образовательным программам
+            высшего образования – программам магистратуры</h5></a>
+    </blockquote>
+
+
+    <!--
+            Кнопки с выпадающими таблицами
+    -->
+    <div id="accordionExample">
+        <h3 class="text-center"> Чтобы увидеть календарь, выберите форму обучения: </h3>
+        <div class="row text-center">
+            <div class="col-lg-6">
+                <button class="btn m-5 p-4 btn-block btn-info collapsing" type="button" data-toggle="collapse" data-target="#OFO" aria-expanded="false" aria-controls="#OFO">
+                    Очная форма обучения
+                </button>
+            </div>
+            <div class="col-lg-6">
+                <button class="btn m-5 p-4 btn-block btn-info collapsing" type="button" data-toggle="collapse" data-target="#ZFO" aria-expanded="false" aria-controls="#ZFO">
+                    Заочная форма обучения
+                </button>
+            </div>
+
+
+        </div>
+        <!--
+                   Таблица ОФО
+        -->
+        <div class="collapse" id="OFO" data-parent="#accordionExample">
+            <div class="card card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center table-hover table-sm">
+                        <tbody>
+                        <tr>
+                            <td class="bl" colspan="2"  valign="bottom" height="25"><strong>Календарь приема (ОФО магистратура)</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="bl" colspan="2"  valign="bottom" height="25"><strong>Основной прием</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="42">20 июня 2021</td>
+                            <td class="table-primary"  valign="middle"><strong>Начало прием документов</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">29 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии на зачисление от поступающих без вструпительных испытаний, на места в пределах квоты приема на обучение магистратуры, имеющих особое право на прием в пределах квоты, на места в пределах квоты приема на целевое обучение при наличии</td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="42">30 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Издание приказов о зачислении лиц, поступающих без вступительных испытаний, поступающих на места в пределах квот</td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="42">20 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Завершение приема документов, необходимых для поступления, от лиц поступающих на обучение по результатам вступительных испытаний, проводимых Академией самостоятельно</td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">26 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Срок завершения вступительных испытаний, проводимых Академией самостоятельно </td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">27 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Размещение списков рекомендованных к зачислению на официальном сайте Академии </td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">30 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии на зачисление на основные конкурсные места </td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">31 августа 2021</td>
+                            <td class="table-info"  valign="bottom">Издание приказа о зачислении лиц, подавших заявление о согласии на зачисление на основные конкурсные места </td>
+                        </tr>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--        ЗФО     -->
+        <div class="collapse" id="ZFO" data-parent="#accordionExample">
+            <div class="card card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center table-hover table-sm">
+                        <tbody>
+                        <tr>
+                            <td class="bl" colspan="2"  valign="bottom" height="25"><strong>Календарь приема (ЗФО магистратура)</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="bl" colspan="2"  valign="bottom" height="25"><strong>Основной прием</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="42">01 февраля 2021</td>
+                            <td class="table-primary"  valign="middle"><strong>Начало прием документов</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">27 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии на зачислений от поступающих без вступительных испытаний, на места в пределах квоты приема на обучение по программам магистратуры, имеющих особое право на прием в пределах квоты, на места в пределах квоты приема на целевое обучение при наличии
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">29 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Издание приказа о зачислении лиц, поступающих без вступительных испытаний, поступающих на места в пределах квот</td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">19 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Завершение приема документов, необходимых для поступления, от лиц поступающих на обучение по результатам вступительных испытаний, проводимых Академией самостоятельно</td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">26 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Срок завершения вступительных испытаний, проводимых Академией самостоятельно</td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">27 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Размещение списков рекомендованных к зачислению на официальном сайте Академии й </td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">29 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии на зачисление на основные конкурсные места  </td>
+                        </tr>
+                        <tr>
+                            <td class="table-primary"  valign="middle" height="63">30 ноября 2021</td>
+                            <td class="table-info"  valign="bottom">Издание приказа о зачислении лиц, подавших заявление о согласии на зачисление на основные конкурсные места  </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

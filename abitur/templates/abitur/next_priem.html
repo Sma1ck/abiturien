@@ -1,0 +1,179 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Информация
+{% endblock %}
+
+
+{% block content %}
+<br>
+<h2 align="center"><u> Прием 2022-2023 </u></h2>
+<br>
+<div class="row">
+    <div class="col-md-3 ">
+        <a class="btn btn-lg btn-block btn-info mb-1" href="{% static 'nextpriem23/bak/1plan_bak.pdf'%}">Порядок приема</a><br>
+    </div>
+    <div class="col-md-3 ">
+        <a class="btn btn-lg btn-block btn-info mb-1" href="{% static 'nextpriem23/bak/1plan_bak.pdf'%}">Особенности приема</a><br>
+    </div>
+    <div class="col-md-3 ">
+        <a class="btn btn-lg btn-block btn-info mb-1" href="{% static 'nextpriem23/bak/1plan_bak.pdf'%}">Правила приема</a><br>
+    </div>
+    <div class="col-md-3 ">
+        <button class="btn btn-lg btn-block btn-info dropdown-toggle mb-1" type="button" data-toggle="collapse" data-target="#dogovor" aria-expanded="false" aria-controls="#dogovor">
+            Образец договора
+        </button>
+    </div>
+</div>
+<div id="spoiler_dogovor">
+    <div class="collapse" id="dogovor" data-parent="#spoiler_dogovor">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/dogovor/1bak_mag_spec.pdf'%}">Типовой договор об образовании на обучение по образовательным программам высшего образования(бакалавриат, специалитет, магистратура)</a>
+                </div>
+                <div class="col-md-6 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/dogovor/2asp.pdf'%}">Типовой договор об образовании на обучение по образовательным программам высшего образования(аспирантура)</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/dogovor/1-1bak_mag_spec.pdf'%}">Приложение к договору(бакалавриат, специалитет, магистратура)</a>
+                </div>
+                <div class="col-md-6 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/dogovor/2-1asp.pdf'%}">Приложение к договору(аспирантура)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div align="center" class="col-md-12 justify-content-center">
+        <button class="btn btn-lg btn-block btn-info dropdown-toggle mb-1" type="button" data-toggle="collapse" data-target="#VI" aria-expanded="false" aria-controls="#VI">
+            Программы вступительных испытаний
+        </button>
+    </div>
+</div>
+
+<div id="spoiler">
+    <div class="collapse" id="VI" data-parent="#spoiler">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_soc.pdf'%}">Обществознание</a>
+                </div>
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_history.pdf'%}">История</a>
+                </div>
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_okp.pdf'%}">Основы конституционного права</a>
+                </div>
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_gp.pdf'%}">Гражданское право</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_russian.pdf'%}">Русский язык</a>
+                </div>
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_tgp.pdf'%}">Теория государства и права</a>
+                </div>
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_kp.pdf'%}">Конституционное право</a>
+                </div>
+                <div class="col-md-3 ">
+                    <a class="btn btn-lg btn-block btn-light mb-1" href="{% static 'nextpriem23/VI/vi_up.pdf'%}">Уголовное право</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid ">
+
+    <div class="row text-center">
+
+        <div class="col align-items-start m-3" style="background-color : #E0F4FF; text-align: center;">
+            <h4>Бакалавриат: </h4>
+            <a href="{% static 'nextpriem23/bak/1plan_bak.pdf'%}">План приема</a><hr>
+            <a href="{% static 'nextpriem23/bak/2bak_up.pdf'%}">Условия поступления</a><hr>
+            <a href="{% static 'nextpriem23/bak/3bak_vi.pdf'%}">Мин.количество баллов, вступительные испытания</a><hr>
+            <a href="{% static 'nextpriem23/bak/4bak_sroki.pdf'%}">Сроки подачи документов и заявлений о согласии на зачисление</a><hr>
+            <a href="{% static 'nextpriem23/bak/5bak_id.pdf'%}">Порядок начисления баллов за индивидуальные достижения</a><hr>
+            <a href="{% static 'nextpriem23/bak/6bak_osob.pdf'%}">Информация об особых правах и преимуществах</a><hr>
+            <a href="{% static 'nextpriem23/bak/7bak_ovz.pdf'%}">Информация об особенностях проведения вступительных испытаний для лиц с ОВЗ</a><hr>
+            <a href="{% static 'nextpriem23/bak/8bak_cvota.pdf'%}">Извлечение: особая квота</a><hr>
+            <a href="{% static 'nextpriem23/bak/9bak_place.pdf'%}">Информация о местах подачи док-в, информация о подачи в эл. форме</a><hr>
+            <a href="{% static 'nextpriem23/bak/10bak_ap.pdf'%}">Правила подачи апелляций</a><hr>
+            <a href="{% static 'nextpriem23/bak/bak_prikaz_vi.pdf'%}">Приказ об утверждении вступит. испытаний</a><hr>
+            <a href="{% static 'nextpriem23/bak/bak_prikaz_priem.pdf'%}">Приказ об утверждении правил приема</a><hr>
+
+        </div>
+        <div class="col align-items-center m-3" style="background-color : #E0F4FF; text-align: center;">
+            <h4>Магистратура: </h4>
+            <a href="{% static 'nextpriem23/mag/1mag_plan.pdf'%}">План приема</a><hr>
+            <a href="{% static 'nextpriem23/mag/2mag_up.pdf'%}">Условия поступления</a><hr>
+            <a href="{% static 'nextpriem23/mag/3mag_vi.pdf'%}">Мин.количество баллов, вступительные испытания</a><hr>
+            <a href="{% static 'nextpriem23/mag/4mag_sroki.pdf'%}">Сроки подачи документов и заявлений о согласии на зачисление</a><hr>
+            <a href="{% static 'nextpriem23/mag/5mag_id.pdf'%}">Порядок начисления баллов за индивидуальные достижения</a><hr>
+            <a href="{% static 'nextpriem23/mag/6mag_osob.pdf'%}">Информация об особых правах и преимуществах</a><hr>
+            <a href="{% static 'nextpriem23/mag/7mag_ovz.pdf'%}">Информация об особенностях проведения вступительных испытаний для лиц с ОВЗ</a><hr>
+            <a href="{% static 'nextpriem23/mag/8mag_cvota.pdf'%}">Извлечение: особая квота</a><hr>
+            <a href="{% static 'nextpriem23/mag/9mag_place.pdf'%}">Информация о местах подачи док-в, информация о подачи в эл. форме</a><hr>
+            <a href="{% static 'nextpriem23/mag/10mag_ap.pdf'%}">Правила подачи апелляций</a><hr>
+            <a href="{% static 'nextpriem23/bak/mag_prikaz_vi.pdf'%}">Приказ об утверждении вступит. испытаний</a><hr>
+            <a href="{% static 'nextpriem23/mag/mag_prikaz_priem.pdf'%}">Приказ об утверждении правил приема</a><hr>
+
+        </div>
+        <div class="col align-items-end m-3" style="background-color : #E0F4FF; text-align: center;">
+            <h4>Аспирантура: </h4>
+            <a href="{% static 'nextpriem23/asp/1plan_asp.pdf'%}">План приема</a><hr>
+            <a href="{% static 'nextpriem23/asp/2asp_up.pdf'%}">Условия поступления</a><hr>
+            <a href="{% static 'nextpriem23/asp/3asp_vi.pdf'%}">Мин.количество баллов, вступительные испытания</a><hr>
+            <a href="{% static 'nextpriem23/asp/4asp_sroki.pdf'%}">Сроки подачи документов и заявлений о согласии на зачисление</a><hr>
+            <a href="{% static 'nextpriem23/asp/5asp_id.pdf'%}">Порядок начисления баллов за индивидуальные достижения</a><hr>
+            <a href="{% static 'nextpriem23/asp/7asp_ovz.pdf'%}">Информация об особенностях проведения вступительных испытаний для лиц с ОВЗ</a><hr>
+            <a href="{% static 'nextpriem23/asp/9asp_place.pdf'%}">Информация о местах подачи док-в, информация о подачи в эл. форме</a><hr>
+            <a href="{% static 'nextpriem23/asp/10asp_ap.pdf'%}">Правила подачи апелляций</a><hr>
+            <a href="{% static 'nextpriem23/asp/asp_prikaz_priem.pdf'%}">Приказ об утверждении правил приема</a><hr>
+
+        </div>
+        <div class="col align-items-end m-3" style="background-color : #E0F4FF; text-align: center;">
+            <h4>Специалитет: </h4>
+            <a href="{% static 'nextpriem23/spec/1spec_plan.pdf'%}">План приема</a><hr>
+            <a href="{% static 'nextpriem23/spec/2spec_up.pdf'%}">Условия поступления</a><hr>
+            <a href="{% static 'nextpriem23/spec/3spec_vi.pdf'%}">Мин.количество баллов, вступительные испытания</a><hr>
+            <a href="{% static 'nextpriem23/spec/4spec_sroki.pdf'%}">Сроки подачи документов и заявлений о согласии на зачисление</a><hr>
+            <a href="{% static 'nextpriem23/spec/5spec_id.pdf'%}">Порядок начисления баллов за индивидуальные достижения</a><hr>
+            <a href="{% static 'nextpriem23/spec/6spec_osob.pdf'%}">Информация об особых правах и преимуществах</a><hr>
+            <a href="{% static 'nextpriem23/spec/7spec_ovz.pdf'%}">Информация об особенностях проведения вступительных испытаний для лиц с ОВЗ</a><hr>
+            <a href="{% static 'nextpriem23/spec/8spec_cvota.pdf'%}">Извлечение: особая квота</a><hr>
+            <a href="{% static 'nextpriem23/spec/9spec_place.pdf'%}">Информация о местах подачи док-в, информация о подачи в эл. форме</a><hr>
+            <a href="{% static 'nextpriem23/spec/10spec_ap.pdf'%}">Правила подачи апелляций</a><hr>
+            <a href="{% static 'nextpriem23/spec/spec_prikaz_vi.pdf'%}">Приказ об утверждении вступит. испытаний</a><hr>
+            <a href="{% static 'nextpriem23/spec/spec_prikaz_priem.pdf'%}">Приказ об утверждении правил приема</a><hr>
+        </div>
+    </div>
+    <div class="row">
+        <!--        Общежитие       -->
+        <div class="col alight-items-center m-3" style="background-color : #E0F4FF; text-align: center;">
+            <h4> <u> Иногородним студентам предоставляется общежитие </u> </h4><br>
+            <p>
+                <b>Иногородние студенты зачисленные на очную форму обучения в полном объеме набора обеспечиваются местами в общежитии</b><br><br>
+                Академия оказывает содействие студентам в предоставлении мест для проживания на период обучения.
+                <u> Заселение студентов в общежитие производится на основании личного заявления, завизированного
+                    деканом факультета очной формы обучения Санкт-Петербургской юридической академии.</u><br><br>
+
+                Зачисленным иногородним студентам очной формы обучения на основании
+                <b>статьи 39 главы 4 Федерального закона «Об образовании в Российской Федерации» № 273-ФЗ от
+                    29 декабря 2012 года предоставляется места для проживания в общежитиях при наличии соответствующего
+                    жилищного фонда, исходя из количества имеющихся свободных мест.</b>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'regabitur/base_reg.html' %}
+
+{% block title %}
+    Авторизация Абитуриентов
+{% endblock %}
+
+{% block content %}
+
+<h2 class="text-center">Авторизация в системе (шаг 2)</h2><br><br>
+<div class="row">
+
+    <div class="col-md-5 card border-primary">
+        <form id="register_form" method="post"><br>
+            {% csrf_token %}
+            {{form }}
+        </form>
+
+        <p class="mt-3"><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+         <p class="mt-3"><a href="{% url 'register_abitur_url' %}">Впервые на сайте? Пройдите регистрацию</a></p>
+        <button form="register_form" type="submit" class="btn btn-primary mt-2 mb-4">Войти в систему</button>
+
+    </div>
+    <div class="col-md-7">
+        <div class="card border-info ml-8">
+            <div class="card-header text-center">Авторизация в системе</div>
+            <div class="card-body text-info">
+
+                <div class="alert alert-info" role="alert"> <h4><span class="badge badge-danger">Имя пользователя и пароль:</span> </h4>
+                    Необходимо ввести имя пользователя(логин) и пароль, которые вы использовали при регистрации в системе. <br>
+                    <hr>
+                    Если вы забыли их, нажмите на надпись <b><u>"Забыли пароль?"</u></b> и следуйте дальнейшим инструкциям.
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

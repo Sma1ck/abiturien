@@ -1,0 +1,328 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+  .bg {
+  background-image: url("{%static 'image/4main.jpg' %}");
+
+  height: 350px;
+  background-size: contain
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+  .bl {
+  height: 100%;
+  width: 100%;
+  background-image: url({% static 'image/grad-menu.jpg'%})
+  }
+@font-face {
+ font-family: "DublonC";
+ src: url("https://bootstraptema.ru/assets/fonts/DublonC.otf");
+}
+@keyframes scroll {
+ 0% {
+ transform: translate(0, 0);
+ }
+ 100% {
+ transform: translate(-100%, 0)
+ }
+}
+
+.marquee {
+ max-width: 100%;
+ white-space: nowrap;
+ overflow: hidden;
+}
+
+.marquee * {
+ display: inline-block;
+ padding-left: 100%;
+ -webkit-animation: scroll 21s infinite linear;
+ animation: scroll 21s infinite linear;
+}
+
+</style>
+
+
+<div class="bg">
+
+  <div class="row justify-content-center no-gutters h-100">
+    <div class></div>
+    <div class ="col-md-4"></div>
+    <div class="col-md-5"></div>
+    <div class="col col-auto">
+      <div class="row  justify-content-center no-gutters h-100 align-items-center">
+        <div class="col">
+          <a href="{% url 'bakPage_url' %}" class="btn btn-lg btn-block btn-info mb-1">Бакалавриат</a> <br>
+          <a href="{% url 'mag_page_url' %}" class="btn btn-lg btn-block btn-info mb-1">Магистратура</a> <br>
+          <a href="{% url 'asp_page_url' %}" class="btn btn-lg btn-block btn-info mb-1">Аспирантура</a> <br>
+          <a href="{% url 'spec_page_url' %}" class="btn btn-lg btn-block btn-info mb-1">Специалитет</a> <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container"><div class="row">
+
+<div class="col-xs-12 marquee"><h3 style="color: rgb(34,69,128);">Открыт дополнительный приём на все формы обучения по программам бакалавриата и магистратуры</h3></div>
+
+</div></div>
+<br>
+<div class="container">
+  <div class = "row" >
+    <div class="col-md-1" ></div>
+
+    <div class="col-md-2 dropright">
+      <a href="{% url 'norm_doc_page_url' %}" class="btn btn-lg btn-outline-dark bl">Нормативные <br>документы</a>
+    </div>
+    <div class="col-md-1" ></div>
+    <div class="col-lg-2">
+      <a href="{% url 'reg_info_url' %}" class="btn btn-lg btn-outline-dark bl">Подать документы</a>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <a href="{% url 'infoPage_url' %}" class="btn btn-lg btn-outline-dark bl">Информация поступающим</a>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <a href="{% url 'next_priem_url' %}" class="btn btn-lg btn-outline-dark bl">Прием <br>2022-2023</a>
+    </div>
+    <hr style="border-width: 3px;">
+  </div>
+
+  <br><br>
+  <div>
+    <div class="container">
+      <!--  для важных объявлений -->
+      <blockquote class="blockquoteMyDanger">
+        <h3 class="text-center"><u><b>Уважаемые абитуриенты!</b></u></h3><br>
+        <h4 class="text-center" style="line-height: 1.5">
+                        <u>
+                            Рекомендованные к зачислению и желающие быть зачисленными в Санкт-Петербургскую
+юридическую академию и не подавшие согласие на зачисление, могут скачать <a href="https://jurac.ru/uploads/DOCUMENTS/z_sogl.pdf">ЗДЕСЬ</a>
+бланк согласия на зачисление и подать его через электронную почту<a href="mailto:jurac.spb@mail.ru?subject=Согласие на зачисление">jurac.spb@mail.ru </a>
+                        </u>
+        </h4>
+        <h5 class="text-center">
+          С 20 июня 2021 года открыт прием документов для поступления на все формы обучения. <br><br>
+        </h5>
+          <h5 class="text-center"><u>
+            <a href="{% static 'docPriem2021/blank/z_sogl.pdf' %}">
+             ЗАЯВЛЕНИЕ О СОГЛАСИИ НА ЗАЧИСЛЕНИЕ ПО ДОГОВОРУ ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ
+            </a>
+          </u></h5>
+          <h5 class="text-center"><u>
+            <a href="{% url 'reg_info_url' %}">
+              Подача документов для поступления в Академию осуществляется через
+            <b>электронную систему подачи документов</b>
+            </a>
+          </u></h5>
+      </blockquote>
+      <blockquote class="blockquoteMyDanger">
+        <h4 class="text-center"><a href="{% static 'docPriem2021/p_budj.pdf' %}"> Объявлен конкурсный отбор абитуриентов для обучения на места, финансируемые
+          за счет средств Академии</a></h4>
+      </blockquote>
+      <blockquote class="blockquoteMyOrange" style="text-align: center;">
+        <p class="text-center text-info">
+          Консультирование и запись на личный прием по вопросам поступления и подачи документов осуществляется
+          через контактные телефоны (Приемная комиссия):<br>
+          +7 (921) 951-34-33<br>
+          +7 (812) 677-00-07<br>
+          +7 (921) 564-31-01<br>
+          и/или через электронную почту: jurac.spb@mail.ru
+        </p>
+      </blockquote>
+      <blockquote class="blockquoteMyDanger">
+        <h3 class="text-monospace text-center">Посещение академии по вопросам поступления и подачи документов осуществляется строго по предварительной записи.</h3>
+      </blockquote>
+    </div>
+    <!--  Блоки дерьма  -->
+    <div class="row text-center">
+      <div class="card border-danger">
+        <div class="card-body">
+          <h5 class="text-danger">По окончании Санкт-Петербургской юридической академии выпускникам выдаётся
+            диплом государственного образца о высшем образовании.</h5>
+          <br>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row text-center">
+      <div class="card-group">
+
+        <div class="card border-info">
+          <div class="card-body">
+            <p class="card-text text-info">Иногородние студенты зачисленные на очную форму обучения в полном объеме
+              набора обеспечиваются местами в общежитии</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><a href="{% url 'infoPage_url' %}" class="btn btn-primary">Информация поступающим</a></small>
+          </div>
+
+        </div>
+
+        <div class="card border-info" style="max-height: 100%;">
+          <div class="card-body">
+            <p class="card-text text-info"><b>Отсрочка от призыва на военную службу</b></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><a href="{% url 'infoPage_url' %}" class="btn btn-primary">Информация поступающим</a></small>
+          </div>
+        </div>
+
+
+        <div class="card border-info" style="max-height: 100%">
+          <div class="card-body">
+            <p class="card-text text-info">Сотрудникам органов внутренних дел и иных государственных структур
+              предоставляется скидка на оплату обучения</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><a href="{% url 'infoPage_url' %}" class="btn btn-primary">Информация поступающим</a></small>
+          </div>
+
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+  <!-- Новости  -->
+  <div class="row" >
+
+
+    <div class="col-md-12" align="center">
+      <a href="{% url 'news_list_url' %}"> <h1 class="mb-5" align="center"> Новости</h1> </a>
+      <div class="row row-cols-1 row-cols-md-3">
+        {%for n in news %}
+        <div class="col-md-4">
+          {% include 'abitur/includes/news_card_template.html' %}
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+
+  <br>
+  <div class="container">
+    <div class="row">
+      <!--    первая строка -->
+      <div class="col-md-9">
+        <p >Для организации и осуществления приема поступающих в Академию созданы приемная, экзаменационная и
+          апелляционная комиссии, действующие в соответствии с требованиями законодательства Российской Федерации в
+          области высшего образования и Положением о приемной, экзаменационной и апелляционной комиссиях
+          Санкт-Петербургской юридической академии. <br><br>
+          В состав данных комиссий включены высококвалифицированные научно-педагогические работники академии.
+          Председателем Приемной комиссии является ректор академии.
+          Работу Приемной комиссии и делопроизводство, а также личный прием поступающих и их родителей (законных
+          представителей), переписку по электронной почте, функционирование выделенных отдельных телефонных линий
+          организует ответственный секретарь приемной комиссии, который назначается ректором академии. Под руководством
+          ответственного секретаря Приемной комиссии работает
+          технический секретарь.<br><br>
+          Приемная комиссия академии организует и проводит профориентационные мероприятия, а также осуществляет
+          необходимую рекламную деятельность в средствах массовой информации (реклама в печатных СМИ, печатная реклама,
+          сувенирная реклама, реклама на телевидение, реклама на Веб-сайтах).
+          График Приемной комиссии утверждается Председателем Приемной комиссии академии.</p>
+      </div>
+      <!--    место для фото   -->
+      <div class="col-md-3">
+        <figure class="figure">
+
+          <img src="{% static 'image/or.jpg'%} " class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">
+            Ответственным секретарем Приемной комиссии Санкт-Петербургской юридической академии назначен старший
+            преподаватель кафедры гражданского права академии –<b> Орехова Мария Андреевна.</b></figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr style="border-width: 3px;">
+    <div class="row">
+      <div class="col-md-7">
+        <a href="{% static 'docPriem2021/9mestoAndEmail.pdf' %}" target="_blank"><h5 class="text-center">Информация о
+          местах приема документов, о почтовых и электронных адресах для
+          направления документов, необходимых для поступления</h5></a>
+        <!--      вторая строка   -->
+        <br><br>
+        <div class="row" >
+
+          <blockquote class="blockquoteMyOrange">
+
+            <p class="small">
+              В случае направления документов, необходимых для поступления, через
+              операторов почтовой связи общего пользования или в электронной форме
+              указанные документы принимаются, если они поступили в Академию не
+              позднее срока завершения приема документов, установленного настоящими
+              Правилами приема
+
+            </p>
+          </blockquote>
+        </div>
+        <!--      третья строка   -->
+        <br>
+        <div class="row">
+          <!--          <blockquote class="blockquoteMyBlue">-->
+          <!--            <ul class="list-unstyled small"><u>Документы, необходимые для поступления, представляются (направляются) в Академию одним из следующих-->
+          <!--              способов:</u>-->
+          <!--              <br><br>-->
+          <!--              <li>1) представляются в Академию лично поступающим (доверенным лицом) в приемную комиссию Академии-->
+          <!--                уполномоченному должностному лицу Приемной комиссии Академии, проводящему прием документов в помещениях-->
+          <!--                приемной комиссии в знании Академии; </li><br>-->
+          <!--              <li>2) направляются в Академию через операторов почтовой связи общего-->
+          <!--                пользования по адресу: Россия,192012, Санкт-Петербург, пр. Обуховской Обороны, д. 114, лит. А</li><br>-->
+          <!--              <li>3) направляются в Академию в электронной форме по адресу электронной почты приемной комиссии:-->
+          <!--                priem@jurac.ru</li>-->
+          <!--            </ul>-->
+
+          <!--          </blockquote>-->
+        </div>
+      </div>
+      <!--    место для адреса    -->
+
+      <div class="col-md-5">
+        <h3 align="center" > Расписание работы приемной комиссии: </h3>
+        <table class="table table-striped" style="background-color: #e3f2fd;" >
+
+          <tr class="table-info">
+            <td scope="col" >Понедельник - четверг</td>
+            <td scope="col" >Пятница </td>
+            <td scope="col" >Обеденный перерыв</td>
+          </tr>
+          <tbody>
+          <tr></tr>
+          <tr class="table-info">
+            <td>c 10 до 18 часов</td>
+            <td>c 10 до 17 часов</td>
+            <td>c 12 до 13 часов</td>
+          </tr>
+          <tr>
+            <td><b>Электронный адрес:</b></td>
+            <td colspan="2">JURAC.SPB@MAIL.RU <br> PRIEM@JURAC.RU  </td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Телефоны приемной комиссии:</b></td>
+            <td colspan="2"> +7 (812) 677-00-07 <br> +7 (921) 951-34-33 <br> +7 (921) 564-31-01 </td>
+          </tr>
+          <tr>
+            <td><b>Адрес: </b></td>
+            <td colspan="2">  Россия,192012, Санкт-Петербург, <br>пр. Обуховской Обороны, д. 114, лит. А, <br> 50 метров от станции метро "Пролетарская" </td>
+          </tr>
+          </tbody>
+        </table>
+        <figure class="figure">
+
+          <img src="{% static 'image/map.png' %} " class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">
+            Маршрут от станции метро "Пролетарская"</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

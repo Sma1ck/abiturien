@@ -1,0 +1,78 @@
+{% extends 'regabitur/base_auth.html'%}
+
+{% block content %}
+<div class="card border-primary mt-2 mb-2">
+	<h3 class="text-center text-muted"> Выберете формы обучения галочками и нажмите кнопку <b>"Отправить"</b></h3>
+	<span class="badge bg-danger"><h4>Важно! Выбирайте <b>не более 3 направлений (профилей)!</b></h4></span>
+	<form id="add_addition" method="post"  enctype="multipart/form-data" class="m-4">
+		{% csrf_token%}
+		<div class="fieldWrapper">
+			{{ form.add_addition.errors }}
+			<ul>
+				<h5 class="text-center">Бакалавриат</h5>
+				<li><label for="{{ form.add_addition.id_education_profile_0 }}"><input type="checkbox" name="education_profile" value="2" id="id_education_profile_0">
+					Бакалавриат ОФО Уголовно-правовой профиль
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_1 }}"><input type="checkbox" name="education_profile" value="3" id="id_education_profile_1">
+					Бакалавриат ОФО Гражданско-правовой профиль
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_2 }}"><input type="checkbox" name="education_profile" value="6" id="id_education_profile_2">
+					Бакалавриат ЗФО Уголовно-правовой профиль
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_3 }}"><input type="checkbox" name="education_profile" value="7" id="id_education_profile_3">
+					Бакалавриат ЗФО Гражданско-правовой профиль
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_4 }}"><input type="checkbox" name="education_profile" value="9" id="id_education_profile_4">
+					Бакалавриат ОЗФО Уголовно-правовой профиль
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_5 }}"><input type="checkbox" name="education_profile" value="10" id="id_education_profile_5">
+					Бакалавриат ОЗФО Гражданско-правовой профиль
+					</label></li>
+				<hr>
+				<h5 class="text-center">Специалитет</h5>
+				<li><label for="{{ form.add_addition.id_education_profile_16 }}"><input type="checkbox" name="education_profile" value="21" id="id_education_profile_16">
+					Специалитет ОФО Судебная деятельность
+					</label></li>
+				<hr>
+				<h5 class="text-center">Магистратура</h5>
+				<li><label for="{{ form.add_addition.id_education_profile_6 }}"><input type="checkbox" name="education_profile" value="11" id="id_education_profile_6">
+					Магистратура ОФО Правовое обеспечение гражданского оборота и предпринимательства
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_7 }}"><input type="checkbox" name="education_profile" value="12" id="id_education_profile_7">
+					Магистратура ЗФО Правовое обеспечение гражданского оборота и предпринимательства
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_8 }}"><input type="checkbox" name="education_profile" value="13" id="id_education_profile_8">
+					Магистратура ОФО Теория и практика применения законодательства в уголовно-правовой сфере
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_9 }}"><input type="checkbox" name="education_profile" value="14" id="id_education_profile_9">
+					Магистратура ЗФО Теория и практика применения законодательства в уголовно-правовой сфере
+					</label></li>
+
+				<hr>
+				<h5 class="text-center">Аспирантура</h5>
+				<li><label for="{{ form.add_addition.id_education_profile_10 }}"><input type="checkbox" name="education_profile" value="15" id="id_education_profile_10">
+					Аспирантура ОФО Теория и история права и государства, история учений о праве и государстве
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_11 }}"><input type="checkbox" name="education_profile" value="16" id="id_education_profile_11">
+					Аспирантура ЗФО Теория и история права и государства, история учений о праве и государстве
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_12 }}"><input type="checkbox" name="education_profile" value="17" id="id_education_profile_12">
+					Аспирантура ОФО Уголовный процесс
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_13 }}"><input type="checkbox" name="education_profile" value="18" id="id_education_profile_13">
+					Аспирантура ЗФО Уголовный процесс
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_14 }}"><input type="checkbox" name="education_profile" value="19" id="id_education_profile_14">
+					Аспирантура ОФО Криминалистика; судебно-экспертная деятельность; оперативно-розыскная деятельность
+					</label></li>
+				<li><label for="{{ form.add_addition.id_education_profile_15 }}"><input type="checkbox" name="education_profile" value="20" id="id_education_profile_15">
+					Аспирантура ЗФО Криминалистика; судебно-экспертная деятельность; оперативно-розыскная деятельность
+					</label></li>
+			</ul>
+		</div>
+
+
+	</form>
+	<button form="add_addition" type="submit" class="btn btn-primary m-4">Отправить</button>
+</div>
+{% endblock %}

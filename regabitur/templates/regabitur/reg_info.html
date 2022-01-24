@@ -1,0 +1,103 @@
+{% extends 'regabitur/base_reg.html' %}
+{% block title %}
+Электронная подача документов СПбЮА
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="jumbotron mt-2">
+        <h1 class="display-4 mb-3"> Уважаемые абитуриенты!</h1>
+        <p class="lead">Вы находитесь на странице <b><u>электронной подачи документов для поступления в СПбЮА.</u></b>
+            Для того, чтобы успешно и быстро подать документы в Академию, пожалуйста, внимательно читайте
+            <a href="{% static 'docPriem2020/instruct.pdf'%}" target="_blank" >инструкцию для абитуриентов</a> и подсказки (рекомендации), которые есть на
+            каждой странице данного раздела. Если вы еще не определились с формой обучения, или у вас остались вопросы по приему,
+            ознакомьтесь с информацией, расположенной на страницах <a href="{% url 'main_abitur_url'%}"> сайта для абитуриентов СПбЮА</a>.<br>
+            <a href="{% static 'docPriem2021/p_budj.pdf' %}">
+                Ознакомьтесь с условиями конкурса на места, финансируемые за счет средств Академии.
+            </a>
+        </p>
+    <div style="max-width: 100%; height: auto; overflow:hidden">
+        <div class="alert alert-danger col-md-6" role="alert" style="float: left; width: 50%">
+            <ul>
+                <li><a href="{% static 'docPriem2021/blank/z_pd.pdf'%}" target="_blank" >Согласие на обработку персональных данных</a></li>
+                <li><a href="{% static 'docPriem2021/blank/z_sogl.pdf'%}" target="_blank" >Согласие на зачисление</a></li>
+            </ul>
+        </div>
+        <p style="float: right; width: 48%; margin-left: 2px; color: red; text-align: center ">
+            Рекомендованные к зачислению и желающие быть зачисленными в Санкт-Петербургскую
+            юридическую академию и не подавшие согласие на зачисление, могут подать его через электронную почту <a href="mailto:jurac.spb@mail.ru?subject=Согласие на зачисление">jurac.spb@mail.ru</a>
+        </p>
+    </div>
+        <hr class="my-4">
+        <p>Ознакомиться с информацией по приему на 2020/2021 учебный год:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li><a href="{% url 'main_abitur_url' %}" target="_blank">Главная страница(новости, нормативные документы, основная информация)</a></li>
+                    <li><a href="{% url 'infoPage_url' %}" target="_blank">Информация поступающим(отсрочка, общежитие, иностранным гражданам и т.д.)</a></li>
+                    <li><a href="{% url 'bakPage_url' %}" target="_blank">Бакалавриат</a></li>
+                    <li><a href="{% url 'mag_page_url' %}" target="_blank">Магистратура</a></li>
+                    <li><a href="{% url 'asp_page_url' %}" target="_blank">Аспирантура</a></li>
+                    <li><a href="{% url 'spec_page_url' %}" target="_blank">Специалитет</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li><a href="{% static 'docPriem2020/instruct.pdf'%}" target="_blank">Инструкция по пользованию системой подачи документов для Абитуриентов</a> </li>
+                    <li><a href="#anchor1">Начать подачу документов</a> </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+
+        <div class="card border-info mb-3">
+            <div class="card-header bg-primary"><h3>Хотите подать документы?</h3></div>
+            <div class="card-body">
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item mt-2"><a href="#">Инструкция по пользованию системой подачи документов для Абитуриентов</a></li>
+                    <li class="list-group-item mt-2"><a href="{% url 'login_abitur_url'%}">Уже зарегистрированы?
+                        <span class="badge  badge-primary"><u><h6>Войти</h6></u></span> </a></li></li>
+                </ul>
+                <br>
+                <a href="{% url 'register_abitur_url' %}" class="btn btn-primary btn-block mt-3"> Зарегистрироваться </a>
+            </div>
+        </div>
+    </div>
+    <a id='anchor1'></a>
+    <div class="col-md-7 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3>Регистрация \ вход в систему</h3>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Регистрация/авторизация в системе электронной подачи документов</h5>
+                <p class="card-text">Позволит вам перейти в личный кабинет, ознакомиться со списком обязательных для поступления
+                    документов, ознакомиться с инструкциями работы с ситсемой, понять, как будет проходить работа приемной
+                    комисси и подать документы в электронной форме. </p>
+                <a href="{% url 'register_abitur_url' %}" class="btn btn-primary"> Зарегистрироваться </a>
+                <a href="{% url 'login_abitur_url' %}" class="btn btn-primary"> Войти в систему</a>
+            </div>
+        </div>
+        <div class=" text-center m-2">
+            <img src="{% static 'icons/arrow-down-circle.svg'%}" alt="" width="32" height="32">
+        </div>
+        <div class="card text-right">
+            <div class="card-header">
+                <h3>Заполнение необходимых документов</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-title">После успешного прохождения этапов регистрации, вы можете приступить к скачиванию
+                    и заполнению необходимых для поступления документов.<b> Эти документы доступны в личном кабинете
+                        абитуриента после регистрации.</b></p>
+
+                <span class="badge badge-pill badge-warning">Важно для успешной подачи документов</span>
+            </div>
+        </div>
+        <div class=" text-center m-2">
+            <img src="{% static 'icons/arrow-down-circle.svg'%}" alt="" width="32" height="32">
+        </div>
+{% endblock %}

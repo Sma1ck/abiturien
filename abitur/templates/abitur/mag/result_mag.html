@@ -1,0 +1,40 @@
+{% extends 'abitur/base_abitur.html' %}
+
+{% block title %}
+Магистратура  - Результаты вступительных испытаний
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1 align="center">Результаты вступительных испытаний (Магистратура)</h1>
+    <hr style="border-width: 3px;">
+    <br>
+    <div class="table-response">
+        <table class="table table-border table-hover table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Название</th>
+                <th>Номер</th>
+                <th>Форма обучения</th>
+                <th>Дата</th>
+                <th>Документ</th>
+            </tr>
+            </thead>
+            {%for orders in educational_form %}
+            <tr>
+                <td>{{ orders.name_result }}</td>
+                <td>{{ orders.number_result }}</td>
+                <td>{{ orders.educational_form }}</td>
+                <td>{{ orders.date_result }}</td>
+                <td><a href=" {{orders.file.url}} " rel="noopener" target="_blank">Открыть</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div align="center">
+        <button type="button" onclick="history.back();" class="btn btn-lg btn-block btn-outline-primary">Вернуться назад </button>
+    </div>
+    <br>
+</div>
+{% endblock %}

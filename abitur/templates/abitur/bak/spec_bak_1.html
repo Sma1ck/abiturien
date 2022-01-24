@@ -1,0 +1,103 @@
+{% extends 'abitur/base_abitur.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class = "row">
+        <!--    Название страницы и кнопка "Назад"    -->
+        <div class = 'col-md align-self-start'>
+            <br>
+            <h3 align="center"><u> Название специальности </u></h3>
+        </div>
+        <div class="col-md align-self-center"></div>
+        <div class="col-md align-self-end">
+            <br>
+            <button type="button" onclick="history.back();" class="btn btn-primary btn-lg"><- Назад </button>
+        </div>
+    </div>
+    <hr style="border-width: 3px;">
+    <!--    Краткая характеристика + фото-->
+    <div class="row">
+        <div class="col-lg-8" style="background-color : #e3f2fd">
+            <h3 align="center"> Краткая характеристика специальности</h3>
+            <hr style="border-width: 3px;">
+            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
+                and I will give you a complete account of the system, and expound the actual teachings of the great
+                explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
+                pleasure itself, because it is pleasure,
+                but because those who do not know how to pursue pleasure rationally encounter consequences that are
+                extremely painful.</p>
+        </div>
+        <div class="col-md-4">
+            {% load static %}
+            <img src="{% static 'image/or.jpg'%} " class="figure-img img-fluid rounded"  alt="...">
+        </div>
+    </div>
+
+    <!--    Специальные дисциплины + текст-->
+    <div class="row">
+        <div class="col-lg-8" style="background-color : #c0e3fc">
+            <h3 align="center"> Специальные дисциплины </h3>
+            <hr style="border-width: 3px;">
+            <table class="table" style="text-align : center">
+                <tr>
+                    <td>дисциплина 1</td>
+                    <td>дисциплина 2</td>
+                </tr>
+                <tr>
+                    <td>дисциплина 3</td>
+                    <td>дисциплина 4</td>
+                </tr>
+                <tr>
+                    <td>дисциплина 5</td>
+                    <td>дисциплина 6</td>
+                </tr>
+                <tr>
+                    <td>дисциплина 7</td>
+                    <td>дисциплина 8</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <blockquote class="blockquoteMyBlue">
+                <p>some text some text some text some text some text some text some text</p>
+            </blockquote>
+        </div>
+    </div>
+    <!--    Профессиональные навыки + фото-->
+    <div class="row">
+        <div class="col-lg-8" style="background-color : #9ed7ff">
+            <h3 align="center"> Профессиональные навыки </h3>
+            <hr style="border-width: 3px;">
+            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
+                and I will give you a complete account of the system, and expound the actual teachings of the great
+                explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
+                pleasure itself, because it is pleasure,
+                but because those who do not know how to pursue pleasure rationally encounter consequences that are
+                extremely painful.</p>
+        </div>
+        <div class="col-md-4">
+            {% load static %}
+            <img src="{% static 'image/or.jpg'%} " class="figure-img img-fluid rounded"  alt="...">
+        </div>
+    </div>
+    <!--    Карьерные перспективы + ссылки на кафедры-->
+    <div class="row">
+        <div class="col-lg-8" style="background-color : #85ccff">
+            <h3 align="center"> Карьерные перспективы </h3>
+            <hr style="border-width: 3px;">
+            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
+                and I will give you a complete account of the system, and expound the actual teachings of the great
+                explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
+                pleasure itself, because it is pleasure,
+                but because those who do not  the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
+                pleasure itself, because it is pleasure, know how to pursue pleasure rationally encounter consequences that are
+                extremely painful.</p>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

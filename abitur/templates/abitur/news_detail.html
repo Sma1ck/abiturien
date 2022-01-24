@@ -1,0 +1,117 @@
+{% extends 'abitur/base_abitur.html' %}
+
+{% block title %}
+{{ news.title }} - {{ block.super }}
+{% endblock %}
+
+<!--<div class="container">-->
+<!--    <h3 align="center" class="mt-5">-->
+<!--        {{ news.title }}-->
+<!--    </h3>-->
+<!--    <hr style="border-width: 3px;">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-7">-->
+<!--            <p>-->
+<!--                {{ news.body }}-->
+<!--            </p>-->
+<!--            <br>-->
+<!--            {% for file in news.linked_file.all %}-->
+<!--            <div class="alert alert-primary" role="alert" style="text-align: center;" >-->
+<!--                <p> {{file.name_file}} : <a href=" {{file.get_url_file}} " rel="noopener" target="_blank">Открыть</a>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--        <div class="col-md-5">-->
+
+<!--            <img src=" {{news.get_url_img}} " class="img-fluid"  hspace="6" vspace="6">-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+
+<!--</div>-->
+<!--Временный блок для новости-->
+
+{% block content %}
+<div class="container">
+    <h3 align="center" class="mt-5">
+        {{ news.title }}
+    </h3>
+    <hr style="border-width: 3px;">
+</div>
+<font color="#ff0000"><font size="4" style="font-size: 16pt"><p align="center">Уважаемые
+обучающиеся 1 курса!</font></font>
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font color="#002060"><font size="4" style="font-size: 14pt">ОЧНАЯ
+ФОРМА ОБУЧЕНИЯ </font></font>
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font color="#002060"><font size="4" style="font-size: 14pt">{{ news.body }}</font></font></p>
+<p align="justify" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">Приглашаем
+вас на торжественное собрание посвященное
+ДНЮ ЗНАНИЙ, которое состоится 01 сентября
+2021 года </font>
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">по
+адресу:</font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">Санкт-Петербург</font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">станция
+метро Пролетарская</font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">проспект
+Обуховской Обороны 114, литер А.</font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">Для
+участия в торжественном собрании
+необходимо иметь при себе:</font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<div style="margin-left: 32%">
+<p style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%">
+<font color="#002060"><font size="4" style="font-size: 14pt">-
+</font></font><font color="#002060">индивидуальные
+средства защиты (маска, перчатки);</font></p>
+<p style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%">
+<font color="#002060">- синюю шариковую ручку,
+блокнот для записей;</font></p>
+<p style="margin-left: 1.25cm; margin-bottom: 0cm; line-height: 100%">
+<font color="#002060"><font size="4" style="font-size: 14pt">-
+</font></font><font color="#002060">паспорт и/или документ
+удостоверяющий личность;</font></p>
+</div>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font color="#ff0000"><font size="4" style="font-size: 14pt">ВНИМАНИЕ!!!</font></font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><font size="4" style="font-size: 14pt">Прибытия
+на торжественное собрание в соответствии
+с представленными списками:</font></p>
+<p align="center" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+{% if news.title == 'Бакалавриат' %}
+{% include 'abitur/includes/bak_table.html' %}
+{% elif news.title == 'Специалитет' %}
+{% include 'abitur/includes/spec_table.html' %}
+{% elif news.title == 'Магистратура' %}
+{% include 'abitur/includes/mag_table.html' %}
+{% endif %}
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+{% endblock %}

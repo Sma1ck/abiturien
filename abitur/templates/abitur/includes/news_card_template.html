@@ -1,0 +1,10 @@
+<div class="card card border-info mb-3" style="height: 355px; weight: 345px;">
+    <div style="height: 200px;">
+        <img src=" {{n.img.url}} " class="img-fluid img-thumbnail " style="max-height: 200px;">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{n.title|truncatewords:6}}</h5>
+        <p class="card-text"><small class="text-muted">Дата: {{n.date_pub}}</small></p>
+        <a href="{{ n.get_absolute_url }}" class="stretched-link"></a>
+    </div>
+</div>

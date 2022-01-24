@@ -1,0 +1,87 @@
+{% extends 'abitur/base_abitur.html' %}
+
+{% block title %}
+    {{ type_ed }} - Списки рекомендованных к поступлению
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1 class="text-center m-4 ">Списки Рекомендованных к зачислению <br> </h1>
+        <h2 class="text-center m-4"><u>{{type_ed}}, {{form_ed}} Форма Обучения <br><br>Профиль - {{ profile_name }},</u><br>
+        {{ test_type }}
+    </h2>
+</div>
+    <hr style="border-width: 3px;">
+    <br>
+    <div class="table-response m-5">
+        <table class="table table-border table-hover table-striped" style="font-size: .9em;">
+            <thead class="thead-dark">
+            <tr class="text-center">
+                <th>Идентификационный номер</th>
+                <th>Снилс</th>
+                <th>Согласие на зачисление</th>
+                <th>Преимущественное право</th>
+                <th>Сумма баллов</th>
+                <th>{{ column_name }}</th>
+                <th>{{ column_name_option }}</th>
+                <th>Индивидуальные достижения</th>
+                <th>Состояние</th>
+            </tr>
+            </thead>
+            {%for instance in list %}
+            <tr class="text-center">
+                <td>{{instance.user.publish.individual_str}}{{instance.user.id}}</td>
+                <td>{{instance.user.custom.snils}}</td>
+                <td>{{instance.sogl}}</td>
+                <td>{{instance.advantage}}</td>
+                <td>{{instance.sum_points}}</td>
+                {% if type_ed == "Магистратура" %}
+                <td>{{instance.kp_point}}</td>
+                <td>{{instance.gpup_point}}</td>
+                {% else %}
+                <td>{{instance.choice_ege_point}}</td>
+                <td>{{instance.spec_point}}</td>
+                {% endif %}
+                <td>{{instance.individ}}</td>
+                <td>{{instance.sost_type}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <u><p class="m-4" >Последнее плановое обновление списков: <span id="update"></span></p></u>
+    <div align="center">
+        <button type="button" onclick="history.back();" class="btn btn-lg btn-block btn-outline-primary">Вернуться назад </button>
+    </div>
+    <br>
+
+
+<script>
+    function setDate(){
+        var date = new Date();
+        var option = {
+            year: 'numeric',
+            day: 'numeric',
+            month: 'short'
+
+        }
+        var s_div = document.getElementById('update');
+        strDate = date.toLocaleString('ru-RU', option);
+        if ((date.getHours()%2)!=0) {
+            strHours = date.getHours() - 1;
+            s_div.innerHTML = strDate + " в " + strHours + ":00"
+        } else {
+            strHours = date.getHours();
+            s_div.innerHTML = strDate + " в " + strHours + ":00"
+        }
+    }
+    setDate()
+  //  setInterval(
+  //     "setDate()", 7200000
+  //  );
+
+
+
+
+</script>
+{% endblock %}

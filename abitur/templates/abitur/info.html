@@ -1,0 +1,159 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Информация
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class = "row">
+        <!--    Название страницы и блок срочной информации     -->
+        <div class = 'col-4-md'>
+            <br>
+            <h1 align="center"><u> Информация поступающим </u></h1>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-4-md">
+            <!--            <br>-->
+            <!--            <blockquote class="blockquoteMyOrange">-->
+            <!--                <p> Важная информация </p>-->
+            <!--            </blockquote>-->
+
+        </div>
+    </div>
+    <hr style="border-width: 3px;">
+    <!--    Блок c ссылками на документы     -->
+    <div class="row ">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <a target="_blank" href="{% static 'docPriem2021/6prava-i-preimuschestva.pdf'%}" class="btn btn-block btn-primary">
+                Информация об обособых правах при поступлении</a>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md dropdown">
+            <a href="#" class="btn btn-block btn-primary" role="button" id="dropdownMenuLink2"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Для лиц с ограниченными возможностями</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/7vs_isp-OV-zdorovja.pdf'%}">Бакалавриат / Магистратура / Специалитет<hr></a>
+                <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/asp/6OVZAsp.pdf'%}">Аспирантура</a>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md dropdown">
+            <a href="#" class="btn btn-block btn-primary" role="button" id="dropdownMenuLink3"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Общие правила подачи апелляции</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/10apelyaciya.pdf'%}">Бакалавриат / Магистратура / Специалитет<hr></a>
+                <a class="dropdown-item" target="_blank" href="{% static 'docPriem2021/asp/8apelyaciaAsp.pdf'%}">Аспирантура</a>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <br><br>
+
+    <!--        основной блок       -->
+    <div class="container">
+        <!--        Бюджетное контрктное обучение       -->
+        <blockquote class="blockquoteMyOrange" style="text-align: center;">
+            <h5 class=" text-monospace" >По окончании Санкт-Петербургской юридической академии выпускникам выдаётся диплом государственного образца о высшем образовании</h5>
+        </blockquote>
+        <div class="row">
+
+        </div>
+        <br><br>
+        <!--    Информация об общажитии и отсрочка от армии -->
+        <div class="row">
+            <!--        Общежитие       -->
+            <div class="col-md-5 m-3" style="background-color : #E0F4FF; text-align: center;">
+                <h4> <u> Иногородним студентам предоставляется общежитие </u> </h4><br>
+                <p><b><u>Иногородние студенты зачисленные на очную форму обучения в полном объеме набора обеспечиваются местами в общежитии</u></b></p>
+
+                <br>
+                <p>
+                    Академия оказывает содействие студентам в предоставлении мест для проживания на период обучения.
+                    <u> Заселение студентов в общежитие производится на основании личного заявления, завизированного
+                        деканом факультета очной формы обучения Санкт-Петербургской юридической академии.</u><br><br>
+
+                    Зачисленным иногородним студентам очной формы обучения на основании
+                    <b>статьи 39 главы 4 Федерального закона «Об образовании в Российской Федерации» № 273-ФЗ от
+                        29 декабря 2012 года предоставляется места для проживания в общежитиях при наличии соответствующего
+                        жилищного фонда, исходя из количества имеющихся свободных мест.</b>
+
+
+                </p>
+            </div>
+            <div class="col-md-5 m-3" style="background-color : #E0F4FF; text-align: center;">
+                <h4 align="center"> <u> Отсрочка от призыва на военную службу</u> </h4><br>
+                <p> Отсрочка от призыва на военную службу гражданам, получающим высшее образование, предоставляется
+                    призывной комиссией муниципального образования <b>на основании подпункта 2 статьи 24 Федерального
+                        закона «О воинской обязанности и военной службе».</b> <br><br>
+                    <u>Право на отсрочку от призыва на военную службу имеют граждане, обучающиеся по очной форме обучения.</u></p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 m-3" style="background-color : #E0F4FF; text-align: center;">
+                <h4 align="center"> <u> Скидка за отличное обучение </u> </h4><br>
+                <p> Студентам отделения очной формы обучения, окончившим сессию на отлично,  <p style="color : red"> предоставляется скидка на оплату обучения</p> </p>
+            </div>
+
+
+            <div class="col-md-5 m-3" style="background-color : #E0F4FF; text-align: center;">
+                <a href="{% url 'interPage_url' %}" class="btn btn-lg btn-info bl m-3">Информация для иностранных граждан</a>
+
+            </div>
+        </div>
+        <hr style="border-width: 3px;">
+        <!--        Извлечение из правил    -->
+        <a class="text-center" href="{% static 'docPriem2021/8izvlechenie.pdf'%}"> <h4> <u> Извлечение из правил приема </u> </h4></a>
+        <div class="row">
+
+            <ul class="list-unstyled">
+                <li>Поступающие, указанные в настоящем пункте, могут сдавать
+                    общеобразовательные вступительные испытания, проводимые Академией
+                    самостоятельно (в том числе лица, поступающие на обучение на базе
+                    среднего профессионального образования):</li>
+                <ul>
+                    <li>1) вне зависимости от того, участвовал ли поступающий в сдаче ЕГЭ:</li>
+                    <ul>
+                        <li>а) инвалиды (в том числе дети-инвалиды);</li>
+                        <li>б) иностранные граждане;</li>
+
+                    </ul>
+                    <li>2) по тем предметам, по которым поступающий не сдавал ЕГЭ в
+                        текущем календарном году:</li>
+                    <ul>
+                        <li>если поступающий получил документ о среднем общем образовании в
+                            иностранной организации.</li>
+                    </ul>
+                    <p>Поступающие, указанные в настоящем пункте, могут использовать
+                        результаты ЕГЭ (при наличии) наряду со сдачей общеобразовательных
+                        вступительных испытаний, проводимых Академией самостоятельно.</p>
+                </ul>
+                <p>16. При наличии у поступающего нескольких действительных
+                    результатов ЕГЭ по предмету, либо результата (результатов) ЕГЭ и
+                    результата соответствующего вступительного испытания, проводимого
+                    Академией
+                    самостоятельно
+                    (общеобразовательного
+                    вступительного
+                    испытания или вступительного испытания на базе профессионального
+                    образования), в
+                    качестве результата
+                    вступительного испытания
+                    засчитывается наиболее высокий из имеющихся результатов.</p>
+            </ul>
+
+        </div>
+        <br>
+
+
+    </div>
+</div>
+
+{% endblock %}

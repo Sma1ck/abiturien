@@ -1,0 +1,39 @@
+{% extends 'regabitur/base_auth.html' %}
+
+{% block title%}
+Регистрация
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center mt-4">Регистрация</h1><br><br>
+<div class="row">
+
+    <div class="col-md-7">
+        <div class="card border-info ml-8">
+            <div class="card-header text-center">Регистрация в системе</div>
+            <div class="card-body text-info">
+                <h4 class="card-title"><span class="badge badge-danger">Важно!</span> <br><br> Вводите достоверные
+                    данные в поля "Имя", "Фамилия" и "Адрес электронной почты"!<br></h4><h5> Это поможет сотрудникам приемной
+                комиссии быстрее обработать ваши данные, а электронная почта является гарантом востановления пароля,
+                в случае его утери </h5><br>
+                <div class="alert alert-info" role="alert"> <h4><span class="badge badge-danger">Имя пользователя (Логин):</span> </h4>
+                    Должен содержать не более 150 символов. Может включать в себя буквы, цифры и символы @/./+/-/_. </div>
+                <div class="alert alert-primary" role="alert">С помощью имени пользователя (Логина) и пароля вы сможете войти в систему в дальнейшем, поэтому
+                    запомните их и не теряйте. </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 card border-primary">
+        <form id="register_form" method="post"><br>
+            {% csrf_token %}
+            {{form }}
+        </form>
+        <button form="register_form" type="submit" class="btn btn-primary mt-4">Зарегистрироваться</button>
+    </div>
+
+
+</div>
+
+{% endblock %}

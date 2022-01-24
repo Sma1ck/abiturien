@@ -1,0 +1,24 @@
+{% extends 'abitur/base_abitur.html' %}
+
+{% block title %}
+Все новости
+{% endblock %}
+
+{% block content %}
+<div class="row" >
+    <div class="col-md"></div>
+    <div class="col-md-9" align="center">
+        <br>
+        <h1 class="mb-5" align="center">Новости приемной комиссии</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            {%for n in news %}
+            <div class="col-md-4">
+                {% include 'abitur/includes/news_card_template.html' %}
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="col-md"></div>
+</div>
+{% endblock %}

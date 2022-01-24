@@ -1,0 +1,53 @@
+{%load static%}
+<div class="alert alert-danger" role="alert">
+    Обязательно скачать и заполнить документы.<br>
+    <hr>
+
+    Обратите внимание, что согласие на обработку персональных данных и согласие на зачисление можно заполнить в электронном виде (формате), но обязательно проставление рукописной подписи.<br>
+    <hr>
+    <p><span class="badge badge-pill badge-warning">Важно!</span><br>
+        <h5 class="text-center"><b><u>Инструкция по заполнению бланков документов:</u></b></h5><br>
+        1. Документы заполняются в электронном и (или) рукописном виде (формате).<br>
+        2. При заполнении в электронном виде (формате)<u> <b>учетной карточки</b></u> и
+        <u><b>заявления на поступление</b></u> в графах
+        «подпись поступающего» можно написать свою фамилию. <br>
+        3. При заполнении в электроном виде (формате) <u><b>согласия на обработку персональных данных</b></u>
+        и <u><b>согласия на зачисление</b></u> обязательна рукописная подпись , т.е. необходимо распечатать документы,
+        поставить рукописную подпись , отсканировать и(или) сфотографировать и загрузить файл(ы) в «личный кабинет»
+        электронной подачи документов.
+    </p>
+    <ul>
+        <li><a href="{% static 'docPriem2021/blank/z_bak.pdf'%}" target="_blank" >Заявление для поступления на <b>БАКАЛАВРИАТ</b></a></li>
+        <li><a href="{% static 'docPriem2021/blank/z_spec.pdf'%}" target="_blank" >Заявление для поступления на <b>СПЕЦИАЛИТЕТ</b></a></li>
+        <li><a href="{% static 'docPriem2021/blank/z_mag1.pdf'%}" target="_blank" >Заявление для поступления на <b>МАГИСТРАТУРУ</b></a></li>
+        <li><a href="{% static 'docPriem2021/blank/z_budj.pdf'%}" target="_blank" >Заявление на обучение за счет средств Академии</a></li>
+        {% comment %}
+        <li><a href="{% static 'docPriem2020/blank/z_asp.pdf'%}" target="_blank" >Заявление для поступления на <b>АСПИРАНТУРУ</b></a></li>
+        {% endcomment %}
+        <li><a href="{% static 'docPriem2021/blank/z_uk.pdf'%}" target="_blank" >Учетная карточка студента</a></li>
+        <li><a href="{% static 'docPriem2021/blank/z_pd.pdf'%}" target="_blank" >Согласие на обработку персональных данных</a></li>
+        <li><a href="{% static 'docPriem2021/blank/z_sogl.pdf'%}" target="_blank" >Согласие на зачисление</a></li>
+    </ul>
+
+    <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Посмотреть примеры заполненных документов <img src="{% static 'icons/box-arrow-down.svg'%}" alt="" width="32" height="32">
+    </button>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <ul>
+                <li><a href="{% static 'docPriem2021/blank/example/z_bak_ex.pdf'%}" target="_blank" >Пример: Заявление для поступления на <b>БАКАЛАВРИАТ</b></a></li>
+                <li><a href="{% static 'docPriem2021/blank/example/z_spec_ex.pdf'%}" target="_blank" >Пример: Заявление для поступления на <b>СПЕЦИАЛИТЕТ</b></a></li>
+                <li><a href="{% static 'docPriem2021/blank/example/z_mag_ex.pdf'%}" target="_blank" >Пример: Заявление для поступления на <b>МАГИСТРАТУРУ</b></a></li>
+                {% comment %}
+                <li><a href="{% static 'docPriem2021/blank/example/z_asp_ex.pdf'%}" target="_blank" >Пример: Заявление для поступления на <b>АСПИРАНТУРУ</b></a></li>
+                {% endcomment %}
+                <li><a href="{% static 'docPriem2021/blank/example/z_budj_ex.pdf'%}" target="_blank" >Заявление на обучение за счет средств Академии</a></li>
+                <li><a href="{% static 'docPriem2021/blank/example/z_uk_ex.pdf'%}" target="_blank" >Пример: Учетная карточка студента</a></li>
+                <li><a href="{% static 'docPriem2021/blank/example/z_pd_ex.pdf'%}" target="_blank" >Пример: Согласие на обработку персональных данных</a></li>
+                <li><a href="{% static 'docPriem2021/blank/example/z_sogl_ex.pdf'%}" target="_blank" >Пример: Согласие на зачисление</a></li>
+                <li><a href="{% static 'docPriem2021/blank/example/z_sogl_p_ex.pdf'%}" target="_blank" >Пример: Согласие на зачисление (законный представитель)</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

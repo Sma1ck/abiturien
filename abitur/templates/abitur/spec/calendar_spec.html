@@ -1,0 +1,114 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Бакалавриат - Календарь приема
+{% endblock %}
+
+{% block content %}
+<style>
+     .bl {
+  height: 100%;
+  width: 280px;
+  background-image: url({% static 'image/grad-menu.jpg'%})
+  }
+</style>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-9">
+      <h1 align="center">Календарь приема (Специалитет)</h1>
+      <hr style="border-width: 3px;">
+    </div>
+    <div class="col-md-3">
+      <div align="center">
+        <button type="button" onclick="history.back();" class="btn btn-lg btn-block btn-outline-primary">Вернуться назад </button>
+      </div>
+    </div>
+  </div>
+
+  <blockquote class="blockquoteMyBlue">
+    <a href="{% static 'docPriem2021/spec/4srokiSpec.pdf' %}" target="_blank"><h5>Информация о сроках начала и завершения
+      приема документов, необходимых для поступления, сроках проведения вступительных испытаний для лиц,
+      поступающих на обучение по образовательным программам высшего образования – программам специалитета</h5></a>
+  </blockquote>
+  <h2 class="text-center"> Очная форма обучения </h2>
+  <div class="card card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered text-center table-hover table-sm">
+        <tbody>
+        <tr>
+          <td class="bl" colspan="2"  valign="bottom" height="25"><strong>Календарь приема (ОФО)</strong></td>
+        </tr>
+        <tr>
+          <td class="bl" colspan="2"  valign="bottom" height="25"><strong>Основной прием</strong></td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="42">20 июня 2021</td>
+          <td class="table-primary"  valign="middle"><strong>Начало прием документов</strong></td>
+        </tr>
+        <tr>
+          <td class="table-primary" valign="middle" height="63">29 июля 2021</td>
+          <td class="table-info"  valign="bottom">Завершение приема документов, необходимых для поступления, от лиц поступающих на обучение без прохождения указанных вступительных испытаний</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="63">29 июля 2021</td>
+          <td class="table-info"  valign="bottom">Срок завершения вступительных испытаний, проводимых Академией самостоятельно</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="42">2 августа 2021</td>
+          <td class="table-info"  valign="bottom">Размещение списков рекомендованных к зачислению на официальном сайте Академии</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="63">4 августа 2021</td>
+          <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии на зачисление от поступающих без вступительных испытаний, на места в пределах квоты приема на обучение по программам бакалавриата, программе специалитета, имеющих особое право на прием в пределах квоты, на места в пределах квоты приема на целевое обучение при наличии </td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="63">6 августа 2021</td>
+          <td class="table-info"  valign="bottom">Издание приказа о зачислении лиц, подавших заявление о согласии на зачисление, из числа поступающих без вступительных испытаний, в пределах квот</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="84">11 августа 2021</td>
+          <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии на зачисление на основные конкурсные места</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="63">17 августа 2021</td>
+          <td class="table-info"  valign="bottom">Издание прикзов о зачислении лиц, подавших заявление о согласие на зачисление на основные конкурсные места </td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="84">19 августа 2021</td>
+          <td class="table-info"  valign="bottom">Завершение приема документов, необходимых для поступления, от лиц поступающих на обучение по результатам вступительных испытаний, проводимых Академией самостоятельно</td>
+        </tr>
+        <tr>
+          <td class="table-primary" colspan="2"  valign="middle" height="25"><strong>Дополнительный прием</strong></td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="63">27 августа 2021</td>
+          <td class="table-info"  valign="bottom">Завершение приема документов, необходимых для поступления, от лиц поступающих на обучение без прохождения указанных вступительных испытаний </td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="63">19 августа 2021</td>
+          <td class="table-info"  valign="bottom">Завершение приема документов, необходимых для поступления, от лиц поступающих на обучение по результатам вступительных испытаний, проводимых Академией самостоятельно</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="42">27 августа 2021</td>
+          <td class="table-info"  valign="bottom">Срок завершения вступительных испытаний, проводимых Академией самостоятельно</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="42">28 августа 2021</td>
+          <td class="table-info"  valign="bottom">Размещение списков рекомендованных к зачислению на официальном сайте Академии</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="middle" height="42">30 августа 2021</td>
+          <td class="table-info"  valign="bottom">Срок завершения приема заявлений о согласии  на зачисление на основные конкурсные места</td>
+        </tr>
+        <tr>
+          <td class="table-primary"  valign="bottom" height="42">31 августа 2021</td>
+          <td class="table-info"  valign="bottom">Издание приказа о зачислении лиц, подавших заявление о согласии на зачисление</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

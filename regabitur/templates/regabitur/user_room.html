@@ -1,0 +1,322 @@
+{% extends 'base_regabitur.html' %}
+{% block title %}
+Личный кабинет  - {{request.user }}
+{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<style>
+input + a.btn {
+  display: none;
+}
+input:checked + a {
+  display: inline;
+}
+</style>
+
+<h1 class="mt-3">Личный кабинет пользователя - <u>{{request.user }}</u></h1>
+<hr >
+<div class="row">
+    <div class="col-md-6">
+        <h4>Статус вашей заявки:</h4>
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            <h4> {{status}} </h4>
+        </div>
+        {% elif success%}
+        <div class="alert alert-success" role="alert">
+            <h4> {{status}} </h4>
+        </div>
+        {% else %}
+        <div class="alert alert-warning" role="alert">
+            <h4> {{status}} </h4>
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-md-3">
+        <!--         что-то можно добавить  -->
+    </div>
+</div>
+<hr>
+<div class="row mt-3">
+    <div class="col-md-5">
+        <h4 class="text-center">Ваш уникальный номер в системе:</h4>
+    </div>
+    <div class="col-md-2">
+        <div class="alert alert-info">
+            <h4> {{ request.user.publish.individual_str }}  {{ request.user.id }}</h4>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <p class="text-center">Данный номер присвается каждому абитуриенту, прошедшему регистрацию и поможет вам найти себя в списках подавших
+            документы </p>
+    </div>
+</div>
+
+<!--
+-
+-    если документы поданы
+-
+ -->
+{% if is_complete %}
+<div class="row">
+    <div class="col-md-7">
+        <h3> Вы успешно подали документы! </h3>
+        <hr>
+        <blockquote class="blockquoteMyBlue">
+            <table class="table">
+                <tr>
+                    <td><img src="{% static 'icons/arrow-right-circle-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td>  <p> Обработка документов сотрудниками приемной комиссии занимает не более 3 рабочих дней. Вы можете следить за статусом
+                        своей заявки в личном кабинете абитуриента. Напоминаем, что <b><u>сотрудники приемной комисси СПБЮА в любом
+                            случае свяжутся с вами по телефону или электронной почте, указанной при регистрации.</u></b><br></p></td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'icons/arrow-right-circle-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td>
+
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                <li><a href="{% static 'docPriem2021/blank/z_pd.pdf'%}" target="_blank" >Согласие на обработку персональных данных</a></li>
+                                <li><a href="{% static 'docPriem2021/blank/z_sogl.pdf'%}" target="_blank" >Согласие на зачисление</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Посмотреть примеры заполненных документов <img src="{% static 'icons/box-arrow-down.svg'%}" alt="" width="32" height="32">
+                        </button>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li><a href="{% static 'docPriem2021/blank/example/z_pd_ex.pdf'%}" target="_blank" >Пример: Согласие на обработку персональных данных</a></li>
+                                    <li><a href="{% static 'docPriem2021/blank/example/z_sogl_ex.pdf'%}" target="_blank" >Пример: Согласие на зачисление</a></li>
+                                    <li><a href="{% static 'docPriem2021/blank/example/z_sogl_p_ex.pdf'%}" target="_blank" >Пример: Согласие на зачисление (законный представитель)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+
+            </table>
+            <h4><span class="badge badge-danger">Следите за статусом заявки в личном кабинете!</span> </h4>
+            <br>
+        </blockquote>
+
+    </div>
+
+    <div class="col-md-5 mt-3">
+        <h4>Сообщение от приемной комиссии:</h4>
+        <div class="card border-danger mb-4">
+            <p class="m-2">{{user.message}}</p>
+        </div>
+
+        <!--        Основные данные     -->
+        <h4>Ваши данные: </h4>
+        <div class="card border-primary">
+
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <td colspan="2" class="text-center table-info"> <h5> Данные пользователя </h5></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Логин для входа:</td>
+                    <td>{{request.user}}</td>
+                </tr>
+                <tr>
+                    <td>Имя/Фамилия</td>
+                    <td>{{request.user.get_full_name}}</td>
+                </tr>
+                <tr>
+                    <td>Почта </td>
+                    <td>{{request.user.email}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+        <div class="card border-info mt-3 mb-3">
+            <!--            Доподнительные данные   -->
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <td colspan="2" class="text-center table-info"> <h5> Дополнительные данные </h5></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> Отчество: </td>
+                    <td>{{user.patronymic}}</td>
+                </tr>
+                <tr>
+                    <td> Дата рождения: </td>
+                    <td>{{user.date_of_birth}}</td>
+                </tr>
+                <tr>
+                    <td> Номер телефона: </td>
+                    <td>{{user.phone_number}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="card border-info mt-3 mb-3">
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <td colspan="2" class="text-center table-info"> <h5> Профили обучения </h5></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in profile %}
+                <tr>
+                    <td>{{i}}</td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!--
+-
+-    если документы еще не поданы
+-
+-->
+{% else %}
+<hr>
+<div class="row">
+    <div class="col-md-7">
+        <div class="table-responsive">
+            <table class="table">
+                <td> <img src="{% static 'icons/arrow-right-circle-fill.svg'%}" alt="" width="32" height="32"></td>
+                <td><p>Вы успешно прошли регистрацию. Теперь скачайте бланки документов, которые
+                    находятся ниже, и внимательно их заполните. Загрузить эти документы вы сможете <b>на странице загрузки документов </b></p>
+                </td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'icons/arrow-right-circle-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td>
+                        {% include 'regabitur/includes/doc_card_template.html' %}
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'icons/arrow-right-circle-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td><p>После того, как вы скачали и заполнили необходимые для поступления документы - можно
+                        переходить к <b> финальному шагу - загрузке документов</B>, предварительно приняв соглашение.</p></td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+    <div class="col-md-5 ">
+        <a href="{% static 'docPriem2020/instruct.pdf'%}" class="btn btn-block btn-info" target="_blank">Инструкция по пользованию системой подачи документов для Абитуриентов</a>
+        <hr><br>
+        <h4>Сообщение от приемной комиссии:</h4>
+        <div class="card border-danger mb-4">
+            <p class="m-2">{{user.message}}</p>
+        </div>
+        <h4>Ваши данные: </h4>
+        <!--        Пользователь -->
+        <div class="card border-primary">
+
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <td colspan="2" class="text-center table-info"> <h5> Данные пользователя </h5></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Логин для входа:</td>
+                    <td>{{request.user}}</td>
+                </tr>
+                <tr>
+                    <td>Имя/Фамилия</td>
+                    <td>{{request.user.get_full_name}}</td>
+                </tr>
+                <tr>
+                    <td>Почта </td>
+                    <td>{{request.user.email}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <!--        Доп. данные -->
+        <div class="card border-info">
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <td colspan="2" class="text-center table-info"> <h5> Дополнительные данные </h5></td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td> Отчество: </td>
+                    <td>{{user.patronymic}}</td>
+                </tr>
+                <tr>
+                    <td> Дата рождения: </td>
+                    <td>{{user.date_of_birth}}</td>
+                </tr>
+                <tr>
+                    <td> Номер телефона: </td>
+                    <td>{{user.phone_number}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <!--        Профили -->
+        <div class="card border-info">
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <td colspan="2" class="text-center table-info"> <h5> Профили обучения </h5></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in profile %}
+                <tr>
+                    <td>{{i}}</td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="alert alert-success" role="alert"> <h4><span class="badge badge-danger">Отлично!</span> </h4>
+            Теперь можете перейти к следующему, завершающему шагу - <b><u>к
+                загрузке необходимых для поступления документов</u></b>  <br>
+            <hr>
+            <!--
+                            Если соглашение о персональных данных принято
+            -->
+            {% if agreement %}
+
+            <a href="{% url 'add_doc_url'%}" class="btn btn-block btn-primary">Загрузить документы (шаг 3)</a>
+
+            {% else %}
+
+            <p>Прежде чем перейти к заключительному шагу, пожалуйста, <a href="{% static 'files/sogl_site.pdf'%}"> ознакомьтесь с соглашением о персональных данных и нажмите кнопку:</a> </p>
+            <a href="{%url 'agreement_flag_url' request.user.id %}" class="btn btn-block btn-primary">Принимаю</a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

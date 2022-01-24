@@ -1,0 +1,47 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Бакалавриат - Списки рекомендованных к зачислению
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1 align="center">Список рекомендованных к зачислению (бакалавриат)</h1>
+    <hr style="border-width: 3px;">
+    <br>
+    <div class="container text-center">
+<!--        <h3 class="text-danger"><u><b>Уважаемые абитуриенты!</b></u></h3><br>-->
+<!--        <p><span class="text-danger">-->
+<!--            Рекомендованные к зачислению и желающие быть зачисленными </span>на первом и-->
+<!--втором этапах зачисления в Санкт-Петербургскую юридическую академию и не подавшие-->
+<!--согласи на зачисление, могут скачать <a href="{% static 'docPriem2020/blank/z_sogl.pdf'%}" target="_blank"><b><u>ЗДЕСЬ</u></b></a> бланк согласия на зачисление и подать его-->
+<!--через электронную почту jurac.spb@mail.ru до 25 августа 2020 года (до 17 часов по мск)<br><br>-->
+<!--        </p>-->
+    </div>
+    <div class="table-response">
+        <table class="table table-border table-hover table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Название</th>
+                <th>Форма обучения</th>
+                <th>Дата приказа</th>
+                <th>Документ</th>
+            </tr>
+            </thead>
+            {%for list in educational_form %}
+            <tr>
+                <td>{{ list.name_rec_list }}</td>
+                <td>{{ list.educational_form }}</td>
+                <td>{{ list.date_order }}</td>
+                <td><a href=" {{list.get_url_file}} " rel="noopener" target="_blank">Открыть</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div align="center">
+        <button type="button" onclick="history.back();" class="btn btn-lg btn-block btn-outline-primary">Вернуться назад </button>
+    </div>
+    <br>
+</div>
+{% endblock %}

@@ -1,0 +1,281 @@
+{% extends 'base_regabitur.html' %}
+
+{% block title %}
+Добавить документы
+{% endblock %}
+
+
+
+{% block content %}
+{%load static%}
+
+<script type='text/javascript'>
+                function showFileSize() {
+                    var input, file;
+                    if (!window.FileReader) {
+                        bodyAppend("p", "The file API isn't supported on this browser yet.");
+                        return;
+                    }
+                    input = document.getElementById('id_doc');
+                    if (!input) {
+                        bodyAppend("p", "Um, couldn't find the id_doc element.");
+                    }
+                    else if (!input.files) {
+                        bodyAppend("p", "This browser doesn't seem to support the `files` property of file inputs.");
+                    }
+                    else if (!input.files[0]) {
+                        bodyAppend("p", "Please select a file before clicking 'Load'");
+                    }
+                    else {
+                        file = input.files[0];
+                        if (file.size>2621440){
+                            alert("Файл должен быть не более 2,5 мегабайт");
+                            return false;
+                            }
+                        bodyAppend("p", "File " + file.name + " is " + file.size + " bytes in size");
+                    }
+                }
+
+                function bodyAppend(tagName, innerHTML) {
+                    var elm;
+                    elm = document.createElement(tagName);
+                    elm.innerHTML = innerHTML;
+                    document.body.appendChild(elm);
+                }
+            </script>
+
+<h2 class="mt-4 text-center">Добавить документы для пользователя - {{request.user}}</h2>
+
+<h4 class="text-center mt-4">
+    <div class="alert alert-info text-danger">
+        Что нужно знать при загрузке документов:
+    </div>
+</h4>
+{% if messages %}
+<div class="alert alert-success mt-4 text-center" style="wight:200px">
+    {% for m in messages %}
+    {{m}}
+    {% endfor %}
+</div>
+{% endif%}
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <blockquote class="blockquoteMyBlue">
+            <table class="table">
+                <tr>
+                    <td class="text-center"><img src="{% static 'icons/info-square-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td class="ml-3">Каждый файл загружается по очереди. Если один тип документа состоит из нескольких файлов,
+                        то вы должны несколько раз выбирать этот тип документа и загрузить несколько файлов по одному.</td>
+                </tr>
+                <tr>
+                    <td class="text-center"><img src="{% static 'icons/info-square-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td class="ml-3">Не пытайтесь загрузить несколько файлов за раз, система принимет за одну отправку <b>только один файл.</b></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><img src="{% static 'icons/info-square-fill.svg'%}" alt="" width="32" height="32"></td>
+                    <td class="ml-3">Как только вы выбрали "Тип документа" и прикрепили файл в поле "Загрузить документ",
+                        нажмите на кномку <span class="text-primary"> "Отправить"</span> и дождитесь, пока файл появится
+                        в таблице "Документы, которые вы добавили." После этого приступайте к загрузке следующих файлов</td>
+                </tr>
+                <tr>
+                    <td class="text-center"><span class="badge badge-danger">Важно!</span></td>
+                    <td class="ml-3 text-danger">Размер прикрепляемого файла не должен превышать 2,5 МБ!</td>
+                </tr>
+
+            </table>
+        </blockquote>
+    </div>
+    <div class="col-md-6">
+        <blockquote class="blockquoteMyBlue">
+            <table class="table">
+                <tr>
+                    <td class="text-center"><span class="badge badge-success">Финиш</span></td>
+                    <td class="ml-3">Как только вы загрузили все необходимые документы, нажмите на кнопку
+                        <span class="text-info">"Закончить подачу документов"</span>.
+                        Только после этого сотрудники приемной комисси начнут рассматривать вашу заявку. На рассмотрение
+                        заявки уходит не более трех <u><b>рабочих дней</b></u>, статус заявки вы можете увидеть в личном кабинете. </td>
+                </tr>
+                <tr>
+                    <td class="text-center"><span class="badge badge-info">Важно</span></td>
+                    <td class="ml-3">После того, как вы нажмете на кнопку
+                        <span class="text-info">"Закончить подачу документов"</span>, загрузка новых документов или
+                        исправление документов, которые вы уже добавили, <u>будет недоступна.</u>
+                        <div class="alert alert-success">Если вы обнаружили, что загрузили не все документы, либо ошиблись
+                            при загрузке - не переживайте. Сообщите об этом сотрудникам приемной комиссии, когда они <b>сами свяжутся с вами по телефону.</b> </div>
+                    </td>
+                </tr>
+            </table>
+        </blockquote>
+    </div>
+</div>
+
+<hr style="border-width: 5px;">
+<div class="row mt-3">
+
+
+    <div class="col-md-6 ">
+        <h4>
+            <div class="alert alert-info text-danger">
+                Перечень документов, необходимых для загрузки:
+            </div>
+        </h4>
+        <blockquote class="blockquoteMyOrange">
+            <p class="small">
+                <ul>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Завление"><u>Заявление</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Учетная карточка "><u>Учетная карточка</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Согласие на зачисление</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Согласие на обработку персональных данных</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Фото (3х4)</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Документ, удостоверяющий личность (главная страница, регистрация и страница №19, если меняли паспорт)</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Временная регистрация(при наличии в СПб)</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Документ об образовании с приложением</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Медицинская справка по форме 086-У</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Прививочный сертификат</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Военный билет или приписное удостоверение(при наличии)</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Снилс</u></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="Пример текста "><u>Индивидуальные достижения
+            <p class="text-danger"><b>(только те, что указаны в <a href="{% static 'docPriem2020/5indivDos.pdf' %}">Порядок учета ИД
+                Бакалавриат\Магистратура</a> и <a href="{% static 'docPriem2020/asp/5individAsp.pdf' %}" > порядок учета ИД Аспирантура</a>)</b></p></u></li>
+            </ul>
+            </p>
+        </blockquote>
+    </div>
+    <div class="col-md-6">
+        {% include 'regabitur/includes/doc_card_template.html' %}
+    </div>
+
+</div>
+<hr style="border-width: 5px;">
+{% if not user_doc_done %}
+<div class="row mt-3">
+
+    <!--
+
+        Форма для загрузки докуентов
+
+    -->
+    <div class="col-md-4 ">
+        <h4>Форма для загрузки документов:</h4>
+        <div class="card bg-light mb-3 p-4" >
+            <form id="doc_add" method="post"  enctype="multipart/form-data" onsubmit="return showFileSize()">
+                {% csrf_token%}
+                {{form}}
+                <!--                <input type='submit' id='myAnchor' form="doc_add" value='Load' onclick='showFileSize();'>-->
+
+            </form>
+            <button form="doc_add" id='myAnchor' type="submit" class="btn btn-primary mt-3 mb-2" onclick='showFileSize();'>Отправить</button>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <table class="table">
+            <tr>
+                <td colspan="2" class="text-center"><span class="badge badge-danger"> ВАЖНО </span></td>
+            </tr>
+            <tr>
+                <td class="text-center"><span class="badge badge-danger">1 </span></td>
+                <td class="ml-3 text-danger">Размер прикрепляемого файла <b><u>не должен превышать 2,5 МБ!</u></b></td>
+            </tr>
+            <tr>
+                <td class="text-center"><span class="badge badge-danger">2 </span></td>
+                <td class="ml-3 text-danger">За раз можно загрузить только один файл</td>
+            </tr>
+            <tr>
+                <td class="text-center"><span class="badge badge-danger">3 </span></td>
+                <td class="ml-3 text-danger">Называйте документы в соответствии с типом документа</td>
+            </tr>
+            <tr>
+                <td class="text-center"><span class="badge badge-danger">4 </span></td>
+                <td class="ml-3 text-danger">Старайтесь загружать документы в формате ".pdf", это ускорит процесс обработки ваших документов </td>
+            </tr>
+        </table>
+    </div>
+    <!--
+
+        Таблица с документами
+
+    -->
+
+    <div class="col-md-5">
+        <h4> Документы, которые вы добавили:</h4>
+        <table class="table table-striped border mt-3 table-small" style="font-size: .8em">
+            <thead>
+            <tr>
+
+                <th scope="col">Имя документа</th>
+                <th scope="col">Файл</th>
+                <th scope="col">Удалить</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in document_user  %}
+            <tr>
+
+                <td>{{ i.name_doc}}</td>
+                <td><p title="{{i.doc}}">{{ i.doc|truncatechars:25 }}</p></td>
+                <td>
+                    <form id="delete_form{{i.id}}" action="{% url 'delete_page_url' i.id %}" method="post">
+                        {% csrf_token %}
+                    </form>
+                        <!--
+
+        <a href="javascript:void()" onclick="delete_question{{i.id}}()">Удалить</a>
+
+    -->
+                    <a href="javascript:void()" onclick="delete_question{{i.id}}()">Удалить</a>
+                    <script>
+                         function delete_question{{i.id}}() {
+                             if(confirm("Вы уверены?"))
+                                 {
+                                     document.getElementById('delete_form{{i.id}}').submit();
+                                 }
+                             }
+                     </script>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endif %}
+<hr style="border-width: 5px;">
+
+<div class="row justify-content-md-center">
+    <h3 class="text-center">
+        <div class="alert alert-info text-danger">
+            Нажимайте эту кнопку только после того, как загрузили все документы:
+        </div>
+    </h3>
+    <button type="button" class="btn btn-info btn-lg m-5" data-toggle="modal" data-target="#completeModal">
+        Закончить подачу документов
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="completeModal" tabindex="-1" role="dialog" aria-labelledby="completeModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Подтверждение действий</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Вы загрузили все необходимые для приемной комисси документы? После Нажатия кнопки <b class="text-primary">"Завершить подачу
+                    документов"</b> вы <u class="text-danger">не сможете добавить или удалить отправленные в приемную комиссию документы.</u></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Вернуться к загрузке документов</button>
+                <a href="{% url 'complete_send_url' request.user.id %}" class="btn btn-primary">Завершить подачу документов</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

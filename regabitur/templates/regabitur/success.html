@@ -1,0 +1,24 @@
+{% extends 'base_regabitur.html' %}
+
+{% block title %}
+Авторизация Абитуриентов
+{% endblock %}
+
+{% block content %}
+
+
+<h2 class="text-center mt-4">Поздравляем! Вы завершили подачу документов!</h2><br><br>
+<div class="row">
+    <div class="alert alert-success" role="alert">
+        <h4 class="text-center">Обработка документов сотрудниками приемной комиссии занимает не более 3 рабочих дней.</h4> <br><br>
+        <div class="alert alert-danger">
+            <p class="text-monospace text-center">Вы можете следить за статусом своей заявки в личном кабинете абитуриента. Напоминаем,
+            что <b><u>сотрудники приемной комисси СПБЮА в любом
+            случае свяжутся с вами по телефону или электронной почте, указанной при регистрации.</u></b></p>
+        </div>
+    </div>
+
+    <a href="{% url 'user_room_url' %}" class="btn btn-block btn-lg btn-info m-5">Вернуться в личный кабинет </a>
+</div>
+
+{% endblock %}

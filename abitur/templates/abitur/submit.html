@@ -1,0 +1,153 @@
+{% extends 'abitur/base_abitur.html' %}
+{% load static %}
+{% block title %}
+Списки подавших документы
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class = "row">
+    <!--    Название страницы и блок срочной информации     -->
+    <div class = 'col-4-md'>
+      <br>
+      <h1 align="center"><u> Списки подавших документы</u></h1>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-4-md">
+      <!--            <br>-->
+      <!--            <blockquote class="blockquoteMyOrange">-->
+      <!--                <p> Важная информация </p>-->
+      <!--            </blockquote>-->
+
+    </div>
+  </div>
+  <hr style="border-width: 3px;">
+  <h3 class="text-monospace text-center">Выберите нужное: </h3>
+  <hr><br>
+  <h4 class="text-monospace text-center">Бакалавриат: </h4>
+  <hr>
+  <div class="row">
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_bak_ofo_gp' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Бакалавриат ОФО Гражданско-правовой профиль
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_bak_ozfo_gp' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Бакалавриат ОЗФО Гражданско-правовой профиль
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_bak_zfo_gp' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Бакалавриат ЗФО Гражданско-правовой профиль
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_bak_ofo_up' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Бакалавриат ОФО Уголовно-правовой профиль
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_bak_ozfo_up' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Бакалавриат ОЗФО Уголовно-правовой профиль
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_bak_zfo_up' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Бакалавриат ЗФО Уголовно-правовой профиль
+        </p></a>
+    </div>
+  </div>
+  <br>
+  <h4 class="text-monospace text-center">Специалитет: </h4>
+  <hr>
+  <div class="row">
+    <div class="col-lg-3 text-center">
+      <a href="{% url 'submit_spec_ofo_sd' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          	Специалитет ОФО Судебная деятельность
+        </p></a>
+    </div>
+  </div>
+  <br>
+    <h4 class="text-monospace text-center">Магистратура: </h4>
+  <hr>
+  <div class="row">
+
+    <div class="col-lg-3 text-center">
+      <a href="{% url 'submit_mag_ofo_po' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Магистратура ОФО Правовое обеспечение гражданского оборота и предпринимательства
+        </p></a>
+    </div>
+    <div class="col-lg-3 text-center">
+      <a href="{% url 'submit_mag_zfo_po' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Магистратура ЗФО Правовое обеспечение гражданского оборота и предпринимательства
+        </p></a>
+    </div>
+    <div class="col-lg-3 text-center">
+      <a href="{% url 'submit_mag_ofo_tp' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Магистратура ОФО Теория и практика применения законодательства в уголовно-правовой сфере
+        </p></a>
+    </div>
+    <div class="col-lg-3 text-center">
+      <a href="{% url 'submit_mag_zfo_tp' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Магистратура ЗФО Теория и практика применения законодательства в уголовно-правовой сфере
+        </p></a>
+    </div>
+  </div>
+    <br>
+    <h4 class="text-monospace text-center">Аспирантура: </h4>
+      <hr>
+  <div class="row">
+
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_asp_ofo_tip' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Аспирантура ОФО Теория и история права и государства, история учений о праве и государстве
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_asp_zfo_tip' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Аспирантура ЗФО Теория и история права и государства, история учений о праве и государстве
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_asp_ofo_up' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Аспирантура ОФО Уголовный процесс
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_asp_zfo_up' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          	Аспирантура ЗФО Уголовный процесс
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_asp_ofo_ks' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Аспирантура ОФО Криминалистика; судебно-экспертная деятельность; оперативно-розыскная деятельность
+        </p></a>
+    </div>
+    <div class="col-lg-2 text-center">
+      <a href="{% url 'submit_asp_zfo_ks' %}" target="_blank" class="btn btn-info">
+        <p class="text-monospace text-center">
+          Аспирантура ЗФО Криминалистика; судебно-экспертная деятельность; оперативно-розыскная деятельность
+        </p></a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
